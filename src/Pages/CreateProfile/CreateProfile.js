@@ -5,12 +5,12 @@ function CreateProfile() {
 
   let history = useHistory();
 
-  const nameRef = useRef();
+  const countryRef = useRef();
   const passportRef = useRef();
 
   useEffect(()=> {
-    if (nameRef.current.value) {
-      nameRef.current.value="";
+    if (countryRef.current.value) {
+      countryRef.current.value="";
     }
     if (passportRef.current.value) {
       passportRef.current.value="";
@@ -25,13 +25,12 @@ function CreateProfile() {
 
   return (
     <main>
-      <h1>Profile</h1>
       <form>
-        <label htmlFor="username">Legal Name</label>
+        <label htmlFor="country">Country</label>
         <input
           type="text"
-          name="username"
-          ref={nameRef}
+          name="country"
+          ref={countryRef}
         />
         <label htmlFor="passport-number">Passport Number</label>
         <input
@@ -39,7 +38,7 @@ function CreateProfile() {
           name="passport-number"
           ref={passportRef}
         />
-        <button type="submit" onClick={handleSubmit}>Complete</button>
+        <button type="submit" onClick={handleSubmit}>Continue</button>
       </form>
     </main>
   )

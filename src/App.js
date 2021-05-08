@@ -23,8 +23,11 @@ function App() {
         <MainLayout>
           <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
           <PrivateRoute exact path="/upload" component={UploadPage}/>
+          {/* Accessible only if documents uploaded */}
           <PrivateRoute path="/pending-review" component={PendingPage}/>
+          {/* Accessible on login when document verification complete */}
           <PrivateRoute path="/review-status" component={ReviewPage}/>
+          {/* Accessible for all verified */}
           <PrivateRoute path="/dashboard" component={Dashboard}/>
         </MainLayout>
       </Switch>

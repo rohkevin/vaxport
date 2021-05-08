@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory } from 'react-router';
-import { useGlobalContext } from '../../context'
 
 function UploadPage() {
   let history = useHistory();
@@ -12,10 +11,12 @@ function UploadPage() {
   }
   return (
     <main>
-      <h1 className="h2">Upload Documents</h1>
-      <p>Please upload a clear picture of your vaccination record.</p>
-      <button type="button" onClick={handleUpload}>Upload image</button>
-      <p>*If you have already uploaded an image, do not upload again. You will receive a confirmation email if image has been successfully uploaded.</p>
+      <button></button>
+      <h1 className="h6">Upload Required Documents</h1>
+      <button>Passport</button>
+      <button>Vaccination Record</button>
+
+      <button type="button" onClick={handleUpload}>Done</button>
     </main>
   )
 }
