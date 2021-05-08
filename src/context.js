@@ -1,16 +1,15 @@
-import React, { useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
 
 const AppContext = React.createContext();
 
 function AppProvider({ children }) {
-  let history = useHistory();
+  const [reviewStatus, setReviewStatus] = useState(true);
 
   return (
     <AppContext.Provider
-      value={
-        history
-      }
+      value={{
+        reviewStatus
+      }}
     >
       { children }
     </AppContext.Provider>

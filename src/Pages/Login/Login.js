@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useGlobalContext } from '../../context';
 import './Login.scss'
 
 function Login() {
   const [showSignup, setShowSignup] = useState(true);
-  const { history } = useGlobalContext();
+
+  let history = useHistory();
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -28,7 +29,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Temporary routing
-    history.push('/upload')
+    history.push("/upload")
   }
   const toggleShowSignup = () => {
     setShowSignup(!showSignup);
