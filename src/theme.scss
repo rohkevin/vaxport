@@ -1,8 +1,10 @@
+// Text colors
 $text-primary: rgba(0, 0, 0, 0.87);
 $text-primary-hover: #e0e0e0;
 $text-secondary: rgba(0, 0, 0, 0.54);
 $text-secondary-hover: #f5f5f5;
 
+// Theme colors
 $primary-light: #7986cb;
 $primary-main: #7986cb;
 $primary-dark: #7986cb;
@@ -12,16 +14,6 @@ $secondary-light: #7986cb;
 $secondary-main: #7986cb;
 $secondary-dark: #7986cb;
 $secondary-text: #fff;
-
-$error-light: #e57373;
-$error-main: #f44336;
-$error-dark: #d32f2f;
-$error-text: #fff;
-
-$success-light: #81c784;
-$success-main: #4caf50;
-$success-dark: #388e3c;
-$success-text: rgba(0, 0, 0, 0.87);
 
 $accent1-light: #677c5d;
 $accent1-main: #608051;
@@ -33,6 +25,18 @@ $accent2-main: #7986cb;
 $accent2-dark: #7986cb;
 $accent2-text: #fff;
 
+// Error and Pass for Validation Messages
+$error-light: #e57373;
+$error-main: #f44336;
+$error-dark: #d32f2f;
+$error-text: #fff;
+
+$success-light: #81c784;
+$success-main: #4caf50;
+$success-dark: #388e3c;
+$success-text: rgba(0, 0, 0, 0.87);
+
+// Shades of gray
 $gray50: #fafafa;
 $gray100: #f5f5f5;
 $gray200: #eeeeee;

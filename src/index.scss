@@ -70,7 +70,7 @@ h6, .h6{
   font-size: 1rem;
   line-height: 1.75;
   letter-spacing: 0.00938em;
-  color: var(--text-primary);
+  color: var($text-primary);
 }
 .subtitle2{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -78,7 +78,7 @@ h6, .h6{
   font-size: 0.875rem;
   line-height: 1.57;
   letter-spacing: 0.00714em;
-  color: var(--text-primary);
+  color: var($text-primary);
 }
 .body1{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -86,7 +86,7 @@ h6, .h6{
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.00938em;
-  color: var(--text-primary);
+  color: var($text-primary);
 }
 .body2{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -94,7 +94,7 @@ h6, .h6{
   font-size: 0.875rem;
   line-height: 1.43;
   letter-spacing: 0.01071em;
-  color: var(--text-primary);
+  color: var($text-primary);
 }
 button {
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
