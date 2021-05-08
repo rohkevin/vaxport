@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './Pages/Home/Home.js'
 import Login from './Pages/Login/Login.js'
 import MainLayout from './Components/MainLayout/MainLayout.js'
+import CreateProfile from './Pages/CreateProfile/CreateProfile.js'
 import UploadPage from './Pages/UploadPage/UploadPage.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import ReviewPage from './Pages/ReviewPage/ReviewPage.js'
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/login" component={Login}/>
         {/* Needs to be privateroute from here*/}
         <MainLayout>
+          <Route exact path="/create-profile" component={CreateProfile}/>
           <Route exact path="/upload" component={UploadPage}/>
           <Route path="/pending-review" component={PendingPage}/>
           <Route path="/review-status" component={ReviewPage}/>
