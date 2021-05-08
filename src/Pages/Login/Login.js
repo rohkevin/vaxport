@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Login.scss'
 
 function Login() {
@@ -8,6 +8,8 @@ function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+
+  let history = useHistory();
 
   useEffect(()=> {
     if (emailRef.current.value) {
@@ -25,6 +27,8 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Temporary routing
+    history.push('/upload')
   }
   const toggleShowSignup = () => {
     setShowSignup(!showSignup);

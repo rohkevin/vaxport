@@ -2,9 +2,10 @@ import React from 'react'
 
 function UploadPage() {
   return (
-    <div>
+    <main>
+      <h1 className="h2">Upload Documents</h1>
       
-    </div>
+    </main>
   )
 }
 
