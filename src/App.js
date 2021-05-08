@@ -12,6 +12,7 @@ import UploadPage from './Pages/UploadPage/UploadPage.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import ReviewPage from './Pages/ReviewPage/ReviewPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
+import './theme.scss'
 
 function App() {
   return (

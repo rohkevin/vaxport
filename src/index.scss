@@ -10,7 +10,7 @@
   text-decoration: none;
 }
 body {
-  background-color: $background-paper;
+  background-color: var(--background-paper);
   display: grid;
   place-items: center;
 }
@@ -24,7 +24,7 @@ h1, .h1{
   font-size: 6rem;
   line-height: 1.167;
   letter-spacing: -0.01562em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 h2, .h2{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -32,7 +32,7 @@ h2, .h2{
   font-size: 3.75rem;
   line-height: 1.2;
   letter-spacing: -0.00833em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 h3, .h3{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -40,7 +40,7 @@ h3, .h3{
   font-size: 3rem;
   line-height: 1.167;
   letter-spacing: 0em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 h4, .h4{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -48,7 +48,7 @@ h4, .h4{
   font-size: 2.125rem;
   line-height: 1.235;
   letter-spacing: 0.00735em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 h5, .h5{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -56,7 +56,7 @@ h5, .h5{
   font-size: 1.5rem;
   line-height: 1.334;
   letter-spacing: 0em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 h6, .h6{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -64,7 +64,7 @@ h6, .h6{
   font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: 0.0075em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 .subtitle1{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -72,7 +72,7 @@ h6, .h6{
   font-size: 1rem;
   line-height: 1.75;
   letter-spacing: 0.00938em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 .subtitle2{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -80,7 +80,7 @@ h6, .h6{
   font-size: 0.875rem;
   line-height: 1.57;
   letter-spacing: 0.00714em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 .body1{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -88,7 +88,7 @@ h6, .h6{
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.00938em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 .body2{
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
@@ -96,7 +96,7 @@ h6, .h6{
   font-size: 0.875rem;
   line-height: 1.43;
   letter-spacing: 0.01071em;
-  color: var($text-primary);
+  color: var(--text-primary);
 }
 button {
   font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
