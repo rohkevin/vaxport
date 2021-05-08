@@ -10,8 +10,7 @@ function Home() {
         <h1>Vaxport</h1>
       </div>
       <div className="signup">
-
-        <button className="home-btn">Sign Up</button>
+        <button className="home-btn"><Link to="/login">Sign Up</Link></button>
       </div>
     </main>
   )
