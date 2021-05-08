@@ -29,7 +29,11 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Temporary routing
-    history.push("/upload")
+    if (showSignup) {
+      history.push("/create-profile")
+    } else {
+      history.push("/upload")
+    }
   }
   const toggleShowSignup = () => {
     setShowSignup(!showSignup);
