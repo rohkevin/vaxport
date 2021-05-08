@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useGlobalContext } from '../../context';
+import { useAuth } from '../../Auth'
+
 import './Login.scss'
 
 function Login() {
   const [showSignup, setShowSignup] = useState(true);
-
+  const { signup, login } = useAuth();
+  
   let history = useHistory();
 
   const emailRef = useRef();

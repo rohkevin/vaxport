@@ -11,6 +11,8 @@
 }
 body {
   background-color: $background-paper;
+  display: grid;
+  place-items: center;
 }
 main {
   position: realtive;
