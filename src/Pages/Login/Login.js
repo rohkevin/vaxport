@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useGlobalContext } from '../../context';
 import './Login.scss'
 
 function Login() {
   const [showSignup, setShowSignup] = useState(true);
+  const { history } = useGlobalContext();
 
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-
-  let history = useHistory();
 
   useEffect(()=> {
     if (emailRef.current.value) {
