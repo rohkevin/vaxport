@@ -58,7 +58,10 @@ function CreateProfile() {
         <div className={isModalOpen ? "overlay" : "hide-overlay"} onClick={handleOutsideClick}>
           <div className={isModalOpen ? "upload-modal show-modal" : "upload-modal"}>
             <h3>How would you like to upload?</h3>
-            <button type="button" onClick={uploadImage}><FaRegFolderOpen/> From library</button>
+            <label for="file-upload" className="custom-file-upload" onClick={uploadImage}>
+              <FaRegFolderOpen/> From library
+            </label>
+            <input id="file-upload" type="file" />
             <button type="button" onClick={takePicture}><FiCamera/> Take picture</button>
           </div>
 
