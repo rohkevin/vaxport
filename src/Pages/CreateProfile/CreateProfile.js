@@ -1,8 +1,9 @@
-import React, {useEffect, useRef} from 'react'
-import { useHistory } from 'react-router';
+import React, {useEffect, useRef, useState} from 'react'
+import { useHistory } from 'react-router'
+import './CreateProfile.scss'
 
 function CreateProfile() {
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   let history = useHistory();
 
   const countryRef = useRef();
@@ -17,10 +18,14 @@ function CreateProfile() {
     }
   }, [])
 
-  const handleUpload = () => {
-    
+  const openUploadModal = () => {
+    setIsModalOpen(true);
   }
-
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('overlay')) {
+      setIsModalOpen(false);
+    }
+  }
   return (
     <main>
       <form>
@@ -39,9 +44,22 @@ function CreateProfile() {
           placeholder="Example: 12345678"
         />
         <label>Upload Passport</label>
-        <button type="button" onClick={handleUpload} className="button-2">Upload</button>
+        <button type="button" onClick={openUploadModal} className="button-2">Upload</button>  
+
+
+        <div className={isModalOpen ? "overlay" : "display-none"} onClick={handleOutsideClick}>
+          <div className={isModalOpen ? "upload-modal show-modal" : "upload-modal"}>
+            
+          </div>
+
+        </div>
+
+
+
+
+
         {/* temp button */}
-        <button type="button" onClick={() => history.push("/upload")}>Next</button>
+        <button type="button" onClick={() => history.push("/upload")}>Continue</button>
       </form>
     </main>
   )

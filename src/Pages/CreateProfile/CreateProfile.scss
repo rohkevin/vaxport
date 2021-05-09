@@ -1,0 +1,27 @@
+.overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0000008c;
+}
+.upload-modal {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 250px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: var(--background-default);
+  transform-origin: bottom;
+  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  opacity: 0;
+  visibility: none;
+}
+.show-modal {
+  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  height: 250px;
+  opacity: 1;
+  visibility: visible;
+}
