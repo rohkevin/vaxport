@@ -26,7 +26,7 @@ function App() {
           {/* Change all to privateRoute later */}
           <Route exact path="/upload-passport" component={PassportUpload}/>
           <Route exact path="/upload-records" component={RecordsUpload}/>
-          <Route exact path="/upload" component={UploadPage}/>
+          {/* <Route exact path="/upload" component={UploadPage}/> */}
           {/* Accessible only if documents uploaded */}
           <Route path="/pending-review" component={PendingPage}/>
           {/* Accessible on login when document verification complete */}

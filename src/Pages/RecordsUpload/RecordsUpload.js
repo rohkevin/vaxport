@@ -58,7 +58,8 @@ function RecordsUpload() {
 
   }
   return (
-    <main>
+    <main id="upload-records">
+      <div className="page-wrapper">
         <figure>
           <img src={vaccineRecord} alt="Vaccine receipt"/>
         </figure>
@@ -87,8 +88,10 @@ function RecordsUpload() {
         </div>
 
         {/* temp button */}
-        <button type="button" onClick={() => history.push("/upload")} className="upload-btn">Continue</button>
+        <button type="button" onClick={() => history.push("/pending-review")} className="upload-btn">Continue</button>
       </form>
+
+      </div>
     </main>
   )
 }
