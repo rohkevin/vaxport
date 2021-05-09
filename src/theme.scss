@@ -11,20 +11,10 @@
   --primary-dark: #7986cb;
   --primary-text: #fff;
   
-  --secondary-light: #7986cb;
-  --secondary-main: #7986cb;
-  --secondary-dark: #7986cb;
-  --secondary-text: #fff;
-  
-  --accent1-light: #677c5d;
-  --accent1-main: #608051;
-  --accent1-dark: #39522e;
-  --accent1-text: #fff;
-  
-  --accent2-light: #7986cb;
-  --accent2-main: #7986cb;
-  --accent2-dark: #7986cb;
-  --accent2-text: #fff;
+  --accent-main: #FF9263;
+
+  --dark-gray: #939A9A;
+  --light-gray: #939A9A;
   
   // Error and Pass for Validation Messages
   --error-light: #e57373;
@@ -37,32 +27,8 @@
   --success-dark: #388e3c;
   --success-text: rgba(0, 0, 0, 0.87);
   
-  // Shades of gray
-  --gray50: #fafafa;
-  --gray100: #f5f5f5;
-  --gray200: #eeeeee;
-  --gray300: #e0e0e0;
-  --gray400: #bdbdbd;
-  --gray500: #9e9e9e;
-  --gray600: #757575;
-  --gray700: #616161;
-  --gray800: #424242;
-  --gray900: #212121;
-  --grayA100: #d5d5d5;
-  --grayA200: #aaaaaa;
-  --grayA400: #303030;
-  --grayA700: #616161;
-  
-  --divider: rgba(0, 0, 0, 0.12);
-  
-  --background-paper: #ffffff;
-  --background-default: #fffefa;
-  --background-gray: #eeeade;
-  
-  --button-background: inherit;
-  --button-color: #fcfcfc;
-  --button-hover: #505050;
-  --button-hover-color: #fcfcfc;
+  --background-paper: #F3F6F9;
+  --background-default: #F3F6F9;
   
   --text-link-underline-color: rgba(255, 123, 123, 0.18);
   

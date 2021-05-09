@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Open Sans';
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   text-decoration: none;
 }
 body {
@@ -15,83 +15,58 @@ body {
   place-items: center;
 }
 main {
-  position: realtive;
+  position: relative;
   width: 100%;
+  display: grid;
+  place-items: center;
 }
 h1, .h1{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 300;
-  font-size: 6rem;
-  line-height: 1.167;
-  letter-spacing: -0.01562em;
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.01em;
   color: var(--text-primary);
 }
 h2, .h2{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 300;
-  font-size: 3.75rem;
-  line-height: 1.2;
-  letter-spacing: -0.00833em;
-  color: var(--text-primary);
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
 }
 h3, .h3{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 400;
-  font-size: 3rem;
-  line-height: 1.167;
-  letter-spacing: 0em;
-  color: var(--text-primary);
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
 }
 h4, .h4{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 400;
-  font-size: 2.125rem;
-  line-height: 1.235;
-  letter-spacing: 0.00735em;
-  color: var(--text-primary);
-}
-h5, .h5{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.334;
-  letter-spacing: 0em;
-  color: var(--text-primary);
-}
-h6, .h6{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  letter-spacing: 0.0075em;
-  color: var(--text-primary);
-}
-.subtitle1{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.75;
-  letter-spacing: 0.00938em;
-  color: var(--text-primary);
-}
-.subtitle2{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.57;
-  letter-spacing: 0.00714em;
-  color: var(--text-primary);
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  letter-spacing: 0.01em;
+
+  color: #000000;
 }
 .body1{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.00938em;
-  color: var(--text-primary);
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
 }
 .body2{
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.43;
@@ -99,7 +74,7 @@ h6, .h6{
   color: var(--text-primary);
 }
 button {
-  font-family: 'Open Sans', 'Helvetica', 'Arial' sans-serif;
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -110,7 +85,31 @@ button {
   border-radius: 10px;
   width: 203px;
   height: 60px;
+  padding: 0;
+
+  &:visited {
+    color: #ffffff;
+  }
+}
+.button-2{
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  background-color: #ffffff;
+  color: var(--primary-main);
+  border: 1px solid var(--primary-main);
+  border-radius: 10px;
+  width: 203px;
+  height: 60px;
   padding: 6px 0px;
+  &:visited {
+    color: #ffffff;
+  }
+}
+input {
+  border: 1px solid #1A3E88;
 }
 .display-none {
   display: none;

@@ -7,11 +7,10 @@ function Home() {
   return (
     <main>
       <div className="header">
-        <h1>Vaxport</h1>
+        <h1 className="logo">Vaxport</h1>
       </div>
-      <div className="signup">
-        <button className="home-btn"><Link to="/login">Sign Up</Link></button>
-      </div>
+      <Link to="/login"><button className="home-btn">GET STARTED</button></Link>
+      <Link to="/login"><button className="button-2">Sign Up</button></Link>
     </main>
   )
 }
