@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './MainLayout.scss'
 
 import ProgressBar from '../ProgressBar/ProgressBar'
 import { useGlobalContext } from '../../context'
@@ -10,7 +11,10 @@ function MainLayout({ children }) {
   const { pathname } = useLocation();
   useEffect(() => {
   if (pathname) {
-    if (pathname === "/create-profile") {
+    if (pathname === "/upload-passport") {
+      setCurrentPercentage(50);
+    }
+    if (pathname === "/upload-records") {
       setCurrentPercentage(50);
     }
     if (pathname === "/upload") {
@@ -24,7 +28,7 @@ function MainLayout({ children }) {
   }, [pathname])
 
   return (
-    <div>
+    <div className="full-mid">
       <ProgressBar done={currentPercentage}/>
       { children }
     </div>
