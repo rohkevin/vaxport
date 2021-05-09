@@ -9,7 +9,6 @@ import Login from './Pages/Login/Login.js'
 import MainLayout from './Components/MainLayout/MainLayout.js'
 import PassportUpload from './Pages/PassportUpload/PassportUpload.js'
 import RecordsUpload from './Pages/RecordsUpload/RecordsUpload.js'
-import UploadPage from './Pages/UploadPage/UploadPage.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
 import QRCode from './Pages/QRCode/QRCode'
@@ -25,10 +24,9 @@ function App() {
         <Route path="/QRCode" component={QRCode}/>
         <MainLayout>
           <Route exact path="/login" component={Login}/>
-          {/* Change all to privateRoute later */}
+          {/* Change all to privateRoute later after assimilating login persistence */}
           <Route exact path="/upload-passport" component={PassportUpload}/>
           <Route exact path="/upload-records" component={RecordsUpload}/>
-          {/* <Route exact path="/upload" component={UploadPage}/> */}
           {/* Accessible only if documents uploaded */}
           <Route path="/pending-review" component={PendingPage}/>
           {/* Accessible on login when document verification complete */}

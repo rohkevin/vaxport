@@ -5,7 +5,7 @@ export const AuthContext = React.createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-
+  // Add Login persistence so that it doesn't log out user on page refresh
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user);
