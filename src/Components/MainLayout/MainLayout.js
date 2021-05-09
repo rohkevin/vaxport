@@ -11,7 +11,7 @@ function MainLayout({ children }) {
   useEffect(() => {
   if (pathname) {
     if (pathname === "/create-profile") {
-      setCurrentPercentage(0);
+      setCurrentPercentage(50);
     }
     if (pathname === "/upload") {
       setCurrentPercentage(50);

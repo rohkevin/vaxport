@@ -4,25 +4,10 @@ import { useLocation } from 'react-router';
 const AppContext = React.createContext();
 
 function AppProvider({ children }) {
+  const [showSignup, setShowSignup] = useState(true);
   const [reviewStatus, setReviewStatus] = useState(true);
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [currentPercentage, setCurrentPercentage] = useState(0);
-
-  // const { pathname } = useLocation();
-
-  // useEffect(() => {
-  //   if (pathname) {
-  //     if (pathname === "/create-profile") {
-  //       setCurrentPercentage(0);
-  //     }
-  //     if (pathname === "/upload") {
-  //       setCurrentPercentage(33);
-  //     }
-  //     if (pathname === "/create-profile") {
-  //       setCurrentPercentage(0);
-  //     }
-  //   }
-  // }, [pathname])
 
   const showAlert = (show = false, type = '', msg = '') => {
     setLoginAlert({show, type, msg});
@@ -31,6 +16,7 @@ function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        showSignup, setShowSignup,
         reviewStatus, setReviewStatus,
         loginAlert, showAlert,
         currentPercentage, setCurrentPercentage,

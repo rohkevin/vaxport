@@ -1,8 +1,20 @@
 form {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-
+label {
+  width: 100%;
+}
 input {
-  padding: 5px 10px;
+  width: 100%;
+  margin-top: 9px;
+  margin-bottom: 20px;
+}
+button {
+  margin-top: 40px;
+}
+.login-alert {
+  height: 30px;
 }

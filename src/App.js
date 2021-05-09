@@ -19,9 +19,9 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/login" component={Login}/>
         {/* Needs to be privateroute from here*/}
         <MainLayout>
+          <Route exact path="/login" component={Login}/>
           {/* Change all to privateRoute later */}
           <Route exact path="/create-profile" component={CreateProfile}/>
           <Route exact path="/upload" component={UploadPage}/>

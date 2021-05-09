@@ -7,8 +7,8 @@ import './Login.scss'
 import LoginMessage from '../../Components/LoginMessage/LoginMessage';
 
 function Login() {
-  const [showSignup, setShowSignup] = useState(true);
-  const { showAlert, loginAlert } = useGlobalContext();
+  
+  const { showSignup, setShowSignup, showAlert, loginAlert } = useGlobalContext();
   const { signup, login } = useAuth();
 
   let history = useHistory();
@@ -20,12 +20,7 @@ function Login() {
   const passwordConfirmRef = useRef();
 
   useEffect(()=> {
-    if (fnameRef.current.value) {
-      fnameRef.current.value="";
-    }
-    if (lnameRef.current.value) {
-      lnameRef.current.value="";
-    }
+    
     if (emailRef.current.value) {
       emailRef.current.value="";
     }
@@ -33,6 +28,12 @@ function Login() {
       passwordRef.current.value="";
     }
     if (showSignup){
+      if (fnameRef.current.value) {
+        fnameRef.current.value="";
+      }
+      if (lnameRef.current.value) {
+        lnameRef.current.value="";
+      }
       if (passwordConfirmRef.current.value) {
         passwordConfirmRef.current.value="";
       }
@@ -91,16 +92,9 @@ function Login() {
   return (
     <main>
       <form>
-        <div className="login-header">
-          <p>
-            {showSignup ? 'Already have an account?' : 'Need to make an account?'}
-          </p>
-          <button type="button" onClick={toggleShowSignup}>
-            {showSignup ? 'Login' : 'Sign Up'}
-          </button>
+        <div className={showAlert ? "login-alert show-alert" : "login-alert"}>
+          {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}
         </div>
-        {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}
-        {showSignup ? <h1>Sign Up</h1> : <h1>Log In</h1>}
         {showSignup && (
           <>
           {/* Need to pass in this data to storage */}
@@ -146,7 +140,7 @@ function Login() {
           </>
         )}
         <button type="submit" onClick={handleSubmit}>
-          {showSignup ? 'Register' : 'Login'}
+          {showSignup ? 'Continue' : 'Login'}
         </button>
         <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw'}>Forgot your password?</Link>
       </form>

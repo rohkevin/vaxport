@@ -11,6 +11,7 @@
 }
 body {
   background-color: var(--background-default);
+  width: 100vw;
   display: grid;
   place-items: center;
 }
@@ -65,17 +66,9 @@ h4, .h4{
   line-height: 17px;
   color: #000000;
 }
-.body2{
-  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.43;
-  letter-spacing: 0.01071em;
-  color: var(--text-primary);
-}
 button {
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
@@ -93,7 +86,7 @@ button {
 }
 .button-2{
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
@@ -108,10 +101,26 @@ button {
     color: #ffffff;
   }
 }
+label {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
 input {
   background: #F9F9F9;
-  color: #757575;
-
+  color: var(--dark-gray);
+  border: transparent;
+  border-radius: 5px;
+  padding: 12px 16px;
+}
+a {
+  text-decoration: none;
+  &:visited {
+    color: var(--text-primary);
+  }
 }
 .display-none {
   display: none;

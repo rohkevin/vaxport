@@ -17,10 +17,8 @@ function CreateProfile() {
     }
   }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Temporary reroute
-    history.push("/upload")
+  const handleUpload = () => {
+    
   }
 
   return (
@@ -31,14 +29,19 @@ function CreateProfile() {
           type="text"
           name="country"
           ref={countryRef}
+          placeholder="Example: Canada"
         />
         <label htmlFor="passport-number">Passport Number</label>
         <input
           type="text"
           name="passport-number"
           ref={passportRef}
+          placeholder="Example: 12345678"
         />
-        <button type="submit" onClick={handleSubmit}>Continue</button>
+        <label>Upload Passport</label>
+        <button type="button" onClick={handleUpload} className="button-2">Upload</button>
+        {/* temp button */}
+        <button type="button" onClick={() => history.push("/upload")}>Next</button>
       </form>
     </main>
   )
