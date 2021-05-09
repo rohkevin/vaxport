@@ -7,7 +7,6 @@ import './Login.scss'
 import LoginMessage from '../../Components/LoginMessage/LoginMessage';
 
 function Login() {
-  
   const { showSignup, setShowSignup, showAlert, loginAlert } = useGlobalContext();
   const { signup, login } = useAuth();
 
