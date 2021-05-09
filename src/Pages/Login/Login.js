@@ -57,7 +57,7 @@ function Login() {
           // history.push("/pending-review")
         // if use has not yet uploaded documents
           // history.push("/create-profile")
-        history.push("/create-profile");
+        history.push("/upload-passport");
       } catch(error){
         switch (error.code){
           case ('auth/email-already-in-use') :
@@ -79,7 +79,7 @@ function Login() {
       try {
         await login(emailRef.current.value, passwordRef.current.value);
         showAlert(true,'success','Redirecting...');
-        history.push("/upload");
+        history.push("/dashboard");
       } catch {
         showAlert(true, 'failure', 'Failed to sign in!')
       }
