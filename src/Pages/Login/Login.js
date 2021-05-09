@@ -142,6 +142,10 @@ function Login() {
         <button type="submit" onClick={handleSubmit}>
           {showSignup ? 'Continue' : 'Login'}
         </button>
+        {showSignup ? 
+        <span className="switch-to-login" onClick={() => setShowSignup(false)}>Log in instead</span>
+        :
+        <span className="switch-to-login" onClick={() => setShowSignup(true)}>Need an account? Sign up</span>}
         <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw'}>Forgot your password?</Link>
       </form>
     </main>
