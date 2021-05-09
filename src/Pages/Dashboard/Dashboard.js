@@ -26,7 +26,7 @@ function Dashboard() {
           <p>Vaccination: COVID-19</p>
           <p>Received: Pfizer</p>
           <p>1st Dose Received: 10/05/2021</p>
-          <p>2nd Dose Received: n/a</p>
+          <p>2nd Dose Received: 10/09/2021</p>
           <p></p>
 
         </div>
