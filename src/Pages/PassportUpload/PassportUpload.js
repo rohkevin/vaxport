@@ -1,11 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { useHistory } from 'react-router'
-import './CreateProfile.scss'
+import './PassportUpload.scss'
 import { FaRegFolderOpen } from 'react-icons/fa'
 import { FiCamera } from 'react-icons/fi'
 
-function CreateProfile() {
+import { storage } from '../../firebase';
+
+function PassportUpload() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [image, setImage] = useState(null);
+  const [imageUploaded, setImageUploaded] = useState(false);
+
   let history = useHistory();
 
   const countryRef = useRef();
@@ -28,8 +33,36 @@ function CreateProfile() {
       setIsModalOpen(false);
     }
   }
-  const uploadImage = () => {
+  const uploadImage = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+    // Handle upload
+  }
+  const handleUpload = () => {
+    if (image){
+      const uploadTask = storage.ref(`images/${image.name}`).put(image);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+        },
+        error => {
+          console.log(error);
+        },
+        () => {
+          storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            console.log(url);
+            setImageUploaded(true);
+            setIsModalOpen(false);
+          })
+        }
+      )
 
+    }
   }
   const takePicture = () => {
 
@@ -51,18 +84,19 @@ function CreateProfile() {
           ref={passportRef}
           placeholder="Example: 12345678"
         />
-        <label>Upload Passport</label>
-        <button type="button" onClick={openUploadModal} className="button-2 upload-btn">Upload</button>  
+        <label>Upload</label>
+        <button type="button" onClick={openUploadModal} className="button-2 upload-btn">{imageUploaded ? 'Upload Completed' : 'Upload'}</button>  
 
 
         <div className={isModalOpen ? "overlay" : "hide-overlay"} onClick={handleOutsideClick}>
           <div className={isModalOpen ? "upload-modal show-modal" : "upload-modal"}>
             <h3>How would you like to upload?</h3>
-            <label for="file-upload" className="custom-file-upload" onClick={uploadImage}>
+            <label for="file-upload" className="custom-file-upload" >
               <FaRegFolderOpen/> From library
             </label>
-            <input id="file-upload" type="file" />
+            <input id="file-upload" type="file" onChange={uploadImage}/>
             <button type="button" onClick={takePicture}><FiCamera/> Take picture</button>
+            <button type="button" onClick={handleUpload}>Upload</button>
           </div>
 
         </div>
@@ -72,10 +106,10 @@ function CreateProfile() {
 
 
         {/* temp button */}
-        <button type="button" onClick={() => history.push("/upload")} className="upload-btn">Continue</button>
+        <button type="button" onClick={() => history.push("/upload-records")} className="upload-btn">Continue</button>
       </form>
     </main>
   )
 }
 
-export default CreateProfile
+export default PassportUpload

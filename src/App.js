@@ -7,7 +7,8 @@ import PrivateRoute from './PrivateRoute'
 import Home from './Pages/Home/Home.js'
 import Login from './Pages/Login/Login.js'
 import MainLayout from './Components/MainLayout/MainLayout.js'
-import CreateProfile from './Pages/CreateProfile/CreateProfile.js'
+import PassportUpload from './Pages/PassportUpload/PassportUpload.js'
+import RecordsUpload from './Pages/RecordsUpload/RecordsUpload.js'
 import UploadPage from './Pages/UploadPage/UploadPage.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import ReviewPage from './Pages/ReviewPage/ReviewPage.js'
@@ -23,7 +24,8 @@ function App() {
         <MainLayout>
           <Route exact path="/login" component={Login}/>
           {/* Change all to privateRoute later */}
-          <Route exact path="/create-profile" component={CreateProfile}/>
+          <Route exact path="/upload-passport" component={PassportUpload}/>
+          <Route exact path="/upload-records" component={RecordsUpload}/>
           <Route exact path="/upload" component={UploadPage}/>
           {/* Accessible only if documents uploaded */}
           <Route path="/pending-review" component={PendingPage}/>
