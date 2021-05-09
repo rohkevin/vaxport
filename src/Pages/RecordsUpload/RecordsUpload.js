@@ -6,7 +6,7 @@ import { FiCamera } from 'react-icons/fi'
 
 import { storage } from '../../firebase';
 
-const vaccineRecord = process.env.PUBLIC_URL + '/assets/icons/vaccine.svg'
+const vaccineRecord = process.env.PUBLIC_URL + '/assets/icons/receipt.svg'
 
 function RecordsUpload() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,6 +26,9 @@ function RecordsUpload() {
   const uploadImage = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
+    }
+    if (image){
+      handleUpload();
     }
     // Handle upload
   }
@@ -82,7 +85,6 @@ function RecordsUpload() {
 
             <input id="file-upload" type="file" onChange={uploadImage}/>
             <button type="button" onClick={takePicture}><FiCamera/> Take picture</button>
-            <button type="button" onClick={handleUpload}>Upload</button>
           </div>
 
         </div>

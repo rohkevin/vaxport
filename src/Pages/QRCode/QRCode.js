@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 import './QRCode.scss'
 
+const qrImage = process.env.PUBLIC_URL + '/assets/icons/QRCode.svg'
+
 function QRCode() {
   return (
     <main id="qrcode">
@@ -20,7 +22,9 @@ function QRCode() {
           The QR Code generated logic will occur in a separate file, and render it below by getting it from the firebase database.
         */}
         <div className="qr-image">
-
+          <figure>
+            <img src={qrImage} alt="Placeholder QR"/>
+          </figure>
         </div>
 
         <h3>Your unique code</h3>

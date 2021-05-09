@@ -33,8 +33,9 @@
 
 }
 .qr-image {
-  width: 206px;
   height: 206px;
+  width: auto;
   margin: 20px 0;
-  background: var(--light-gray);
+  display: grid;
+  place-items: center;
 }
