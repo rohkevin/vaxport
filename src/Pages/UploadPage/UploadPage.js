@@ -19,6 +19,7 @@ function UploadPage() {
         <img src={uploadIcon} alt="upload"/>
       </figure>
       <h1 className="h6">Upload Required Documents</h1>
+      {/* If document uploaded, change status */}
       <UploadRequire title="Passport" status={true}/>
       <UploadRequire title="Vaccination Receipt" status={false}/>
       
