@@ -52,7 +52,7 @@ function CreateProfile() {
           placeholder="Example: 12345678"
         />
         <label>Upload Passport</label>
-        <button type="button" onClick={openUploadModal} className="button-2">Upload</button>  
+        <button type="button" onClick={openUploadModal} className="button-2 upload-btn">Upload</button>  
 
 
         <div className={isModalOpen ? "overlay" : "hide-overlay"} onClick={handleOutsideClick}>
@@ -72,7 +72,7 @@ function CreateProfile() {
 
 
         {/* temp button */}
-        <button type="button" onClick={() => history.push("/upload")}>Continue</button>
+        <button type="button" onClick={() => history.push("/upload")} className="upload-btn">Continue</button>
       </form>
     </main>
   )
