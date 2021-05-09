@@ -9,6 +9,7 @@ function Dashboard() {
       <div className="page-wrapper">
         <h1>My Account</h1>
         <h3>Legal Name</h3>
+        {/* Generated from user id */}
         <div className="info-box">
           name
         </div>

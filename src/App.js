@@ -12,6 +12,7 @@ import RecordsUpload from './Pages/RecordsUpload/RecordsUpload.js'
 import UploadPage from './Pages/UploadPage/UploadPage.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
+import QRCode from './Pages/QRCode/QRCode'
 import './theme.scss'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         {/* Needs to be privateroute from here*/}
         <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/QRCode" component={QRCode}/>
         <MainLayout>
           <Route exact path="/login" component={Login}/>
           {/* Change all to privateRoute later */}
