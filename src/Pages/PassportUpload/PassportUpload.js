@@ -37,7 +37,9 @@ function PassportUpload() {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
-    // Handle upload
+    if (image) {
+      handleUpload();
+    }
   }
   const handleUpload = () => {
     if (image){
@@ -96,7 +98,6 @@ function PassportUpload() {
             </label>
             <input id="file-upload" type="file" onChange={uploadImage}/>
             <button type="button" onClick={takePicture}><FiCamera/> Take picture</button>
-            <button type="button" onClick={handleUpload}>Upload</button>
           </div>
 
         </div>
