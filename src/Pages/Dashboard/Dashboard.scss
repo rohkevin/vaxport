@@ -1,0 +1,22 @@
+#dashboard {
+  h1 {
+    width: 100%;
+    color: var(--primary-main);
+    margin-bottom: 26px;
+  }
+  h3{
+    width: 100%;
+    margin-bottom: 9px;
+  }
+}
+.page-wrapper{
+  margin: 128px 20px 0;
+  width: 100%;
+}
+.info-box{
+  width: 100%;
+  background-color: #F9F9F9;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}

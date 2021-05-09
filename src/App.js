@@ -11,7 +11,6 @@ import PassportUpload from './Pages/PassportUpload/PassportUpload.js'
 import RecordsUpload from './Pages/RecordsUpload/RecordsUpload.js'
 import UploadPage from './Pages/UploadPage/UploadPage.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
-import ReviewPage from './Pages/ReviewPage/ReviewPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
 import './theme.scss'
 
@@ -21,6 +20,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home}/>
         {/* Needs to be privateroute from here*/}
+        <Route path="/dashboard" component={Dashboard}/>
         <MainLayout>
           <Route exact path="/login" component={Login}/>
           {/* Change all to privateRoute later */}
@@ -30,10 +30,8 @@ function App() {
           {/* Accessible only if documents uploaded */}
           <Route path="/pending-review" component={PendingPage}/>
           {/* Accessible on login when document verification complete */}
-          <Route path="/review-status" component={ReviewPage}/>
           {/* Accessible for all verified */}
         </MainLayout>
-        <Route path="/dashboard" component={Dashboard}/>
       </Switch>
     </Router>
   )

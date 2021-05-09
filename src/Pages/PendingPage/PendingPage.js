@@ -19,7 +19,7 @@ function PendingPage() {
         <p>A notification will be sent to your email when your vaccination badge is ready</p>
         <br/>
         <p>Please wait up to 7 business days!</p>
-        <button onClick={()=>{history.push("/review-status")}}>Close Window</button>
+        <button onClick={()=>{history.push("/dashboard")}}>Close Window</button>
 
       </div>
     </main>
