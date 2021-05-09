@@ -1,6 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { useHistory } from 'react-router'
 import './CreateProfile.scss'
+import { FaRegFolderOpen } from 'react-icons/fa'
+import { FiCamera } from 'react-icons/fi'
 
 function CreateProfile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,6 +28,12 @@ function CreateProfile() {
       setIsModalOpen(false);
     }
   }
+  const uploadImage = () => {
+
+  }
+  const takePicture = () => {
+
+  }
   return (
     <main>
       <form>
@@ -47,9 +55,11 @@ function CreateProfile() {
         <button type="button" onClick={openUploadModal} className="button-2">Upload</button>  
 
 
-        <div className={isModalOpen ? "overlay" : "display-none"} onClick={handleOutsideClick}>
+        <div className={isModalOpen ? "overlay" : "hide-overlay"} onClick={handleOutsideClick}>
           <div className={isModalOpen ? "upload-modal show-modal" : "upload-modal"}>
-            
+            <h3>How would you like to upload?</h3>
+            <button type="button" onClick={uploadImage}><FaRegFolderOpen/> From library</button>
+            <button type="button" onClick={takePicture}><FiCamera/> Take picture</button>
           </div>
 
         </div>

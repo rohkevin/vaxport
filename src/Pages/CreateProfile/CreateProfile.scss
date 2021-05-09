@@ -1,27 +1,56 @@
 .overlay {
+  display: block;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  opacity: 1;
   background: #0000008c;
+}
+.hide-overlay{
+  visibility: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 .upload-modal {
   position: fixed;
-  bottom: 0;
+  bottom: -100%;
   width: 100vw;
   height: 250px;
+  padding: 30px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: var(--background-default);
-  transform-origin: bottom;
+  transform-origin: bottom center;
   transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   opacity: 0;
   visibility: none;
+  display: grid;
+  place-items: center;
+
+  button {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
 }
 .show-modal {
   transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   height: 250px;
+  position: fixed;
+  bottom: 0;
   opacity: 1;
   visibility: visible;
 }
