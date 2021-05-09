@@ -1,0 +1,19 @@
+#pending-page{
+ img {
+   width: 136px;
+   height: auto;
+ }
+ h3 {
+   color: var(--primary-main);
+   margin-bottom: 30px;
+ }
+ p {
+   text-align: center;
+ }
+}
+
+.page-wrapper {
+  padding: 0 20px;
+  display: grid;
+  place-items: center;
+}

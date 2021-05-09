@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import './PendingPage.scss'
 
 const verifiedIcon = process.env.PUBLIC_URL + '/assets/icons/verifiedIcon.svg'
 
@@ -7,16 +8,20 @@ function PendingPage() {
   let history = useHistory();
 
   return (
-    <main>
-      <figure>
-        <img src={verifiedIcon} alt="verifying"/>
-      </figure>
-      <h1 className="h2">Your records are under review</h1>
-      <p>We are verifying your records with the government's databases.</p>
-      <p>Please check back in 24-48 hours to confirm your verification!</p>
-      <br/>
-      <p>If you do not see and updates, please contact 1-800-000-0000</p>
-      <button onClick={()=>{history.push("/review-status")}}>Close Window</button>
+    <main id="pending-page">
+      <div className="page-wrapper">
+        <figure>
+          <img src={verifiedIcon} alt="pending"/>
+        </figure>
+
+        <h3>Uploaded Successfully!</h3>
+        <p>Your documents are under review.</p>
+        <p>A notification will be sent to your email when your vaccination badge is ready</p>
+        <br/>
+        <p>Please wait up to 7 business days!</p>
+        <button onClick={()=>{history.push("/review-status")}}>Close Window</button>
+
+      </div>
     </main>
   )
 }
