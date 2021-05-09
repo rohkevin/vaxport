@@ -10,7 +10,7 @@
   text-decoration: none;
 }
 body {
-  background-color: var(--background-paper);
+  background-color: var(--background-default);
   display: grid;
   place-items: center;
 }
@@ -109,7 +109,9 @@ button {
   }
 }
 input {
-  border: 1px solid #1A3E88;
+  background: #F9F9F9;
+  color: #757575;
+
 }
 .display-none {
   display: none;

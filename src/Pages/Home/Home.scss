@@ -1,6 +1,30 @@
 .header {
-
+  width: 100%;
 }
 .logo {
+  margin-top: 89px;
+  margin-left: 30px;
+  color: var(--primary-main);
+  font-size: 36px;
+}
+.home-intro{
+  margin: 65px 20px 50px;
+  padding: 0 12px;
+  text-align: center;
 
+  h2 {
+    color: var(--primary-main);
+    padding-bottom: 20px;
+  }
+  p {
+    margin-bottom: 25px;
+    color: var(--dark-gray);
+  }
+  button {
+    margin-bottom: 20px;
+  }
+}
+.home-extra {
+  width: 100%;
+  padding: 0 20px;
 }
