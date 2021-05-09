@@ -22,15 +22,16 @@ function App() {
         <Route exact path="/login" component={Login}/>
         {/* Needs to be privateroute from here*/}
         <MainLayout>
-          <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
-          <PrivateRoute exact path="/upload" component={UploadPage}/>
+          {/* Change all to privateRoute later */}
+          <Route exact path="/create-profile" component={CreateProfile}/>
+          <Route exact path="/upload" component={UploadPage}/>
           {/* Accessible only if documents uploaded */}
-          <PrivateRoute path="/pending-review" component={PendingPage}/>
+          <Route path="/pending-review" component={PendingPage}/>
           {/* Accessible on login when document verification complete */}
-          <PrivateRoute path="/review-status" component={ReviewPage}/>
+          <Route path="/review-status" component={ReviewPage}/>
           {/* Accessible for all verified */}
-          <PrivateRoute path="/dashboard" component={Dashboard}/>
         </MainLayout>
+        <Route path="/dashboard" component={Dashboard}/>
       </Switch>
     </Router>
   )

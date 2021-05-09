@@ -104,7 +104,13 @@ button {
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
-  text-transform: uppercase;
+  background-color: var(--primary-main);
+  color: #ffffff;
+  border: transparent;
+  border-radius: 10px;
+  width: 203px;
+  height: 60px;
+  padding: 6px 0px;
 }
 .display-none {
   display: none;
