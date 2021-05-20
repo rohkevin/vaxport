@@ -102,30 +102,30 @@ function Login() {
       try {
         await login(emailRef.current.value, passwordRef.current.value);
 
-        const nextPath = "/"
+        var nextPath = "/"
         // Check login data against database
         if (users){
           const oldUser = users.find((user) => user.email === emailRef.current.value);
           console.log(oldUser);
           if (!("nationality" in oldUser) || !("passportNumber" in oldUser)) {
-            console.log("registration incomplete");
-            // history.push("/upload-passport")
+            // console.log("registration incomplete");
+            nextPath = "/upload-passport";
           } else 
           if (!("recordURL" in oldUser)) {
-            console.log("missing records");
-            // history.push("/upload-records")
+            // console.log("missing records");
+            nextPath = "/upload-records";
           } else
           // If not verified by the government yet
           if (!("governmentVerified" in oldUser) || !oldUser.governmentVerified) {
-            // history.push("/pending-review")
-            console.log("pending review")
+            nextPath = "/pending-review"
+            // console.log("pending review")
           } else {
-            console.log("everything's there")
-            // history.push("/dashboard")
+            // console.log("everything's there")
+            nextPath = "/dashboard";
           }
         }
         showAlert(true,'success','Redirecting...');
-        
+        history.push(nextPath)
       } catch {
         showAlert(true, 'failure', 'Failed to sign in!')
       }
