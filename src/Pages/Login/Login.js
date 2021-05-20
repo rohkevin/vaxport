@@ -9,7 +9,7 @@ import { db } from '../../firebase';
 
 function Login() {
   const { showSignup, setShowSignup, showAlert, loginAlert, users } = useGlobalContext();
-  const { signup, login, currentUser } = useAuth();
+  const { signup, login } = useAuth();
   const [user, setUser] = useState(null);
 
   let history = useHistory();
@@ -126,9 +126,7 @@ function Login() {
       }
     }
   }
-  const toggleShowSignup = () => {
-    setShowSignup(!showSignup);
-  }
+
   return (
     <main>
       <form>
