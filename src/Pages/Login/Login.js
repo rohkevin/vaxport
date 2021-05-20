@@ -41,6 +41,7 @@ function Login() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+    // Sign up
     if (showSignup){
       if (passwordRef.current.value !== passwordConfirmRef.current.value) {
         return showAlert(true, 'failure', 'Passwords do not match!');
@@ -76,6 +77,7 @@ function Login() {
         }
       }
 
+    // Login
     } else {
       try {
         await login(emailRef.current.value, passwordRef.current.value);
@@ -92,7 +94,6 @@ function Login() {
   return (
     <main>
       <form>
-        <div className="max-width">
           <div className={showAlert ? "login-alert show-alert" : "login-alert"}>
             {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}
           </div>
@@ -148,7 +149,6 @@ function Login() {
           :
           <span className="switch-to-login" onClick={() => setShowSignup(true)}>Need an account? Sign up</span>}
           <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw'}>Forgot your password?</Link>
-        </div>
       </form>
     </main>
   )

@@ -4,7 +4,7 @@ function LoginMessage({ type, msg, removeAlert }) {
   useEffect(()=>{
     const timer = setTimeout(()=> {
       removeAlert();
-    },3000);
+    },2000);
     return () => clearTimeout(timer);
   },[]);
 
