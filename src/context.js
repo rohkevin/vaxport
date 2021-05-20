@@ -16,8 +16,8 @@ function AppProvider({ children }) {
         id: doc.id,
         ...doc.data()
       }));
-      console.log(registeredUsers);
-      // setUsers(registeredUsers);
+      // console.log(registeredUsers);
+      setUsers(registeredUsers);
     })
 
   }, [])

@@ -21,7 +21,7 @@ function Login() {
   const passwordConfirmRef = useRef();
 
   useEffect(()=> {
-    
+    // Clear fields
     if (emailRef.current.value) {
       emailRef.current.value="";
     }
@@ -77,13 +77,7 @@ function Login() {
 
         showAlert(true,'success','Redirecting...');
 
-        // DEPENDING ON HOW MUCH THE USER HAS COMPLETED:
-        // if user has uploaded documents and received verification
-          // history.push("/dashboard")
-        // if user has uploaded documents and is waiting verification
-          // history.push("/pending-review")
-        // if use has not yet uploaded documents
-          // history.push("/create-profile")
+        
 
         history.push("/upload-passport");
       } catch(error){
@@ -107,8 +101,26 @@ function Login() {
     } else {
       try {
         await login(emailRef.current.value, passwordRef.current.value);
+
+        const nextPath = "/"
+        // Check login data against database
+        if (users){
+          const oldUser = users.filter((user) => user.email === emailRef.current.value);
+          console.log(oldUser);
+          // if (oldUser)
+        }
+
         showAlert(true,'success','Redirecting...');
-        history.push("/dashboard");
+        
+        // Conditional redirect
+        // if user has uploaded documents and received verification
+          // history.push("/dashboard")
+        // if user has uploaded documents and is waiting verification
+          // history.push("/pending-review")
+        // if use has not yet uploaded documents
+          // history.push("/create-profile")
+
+        // history.push("/dashboard");
       } catch {
         showAlert(true, 'failure', 'Failed to sign in!')
       }
