@@ -5,6 +5,7 @@ import { useAuth } from '../../Auth'
 import './Login.scss'
 
 import LoginMessage from '../../Components/LoginMessage/LoginMessage';
+import { db } from '../../firebase';
 
 function Login() {
   const { showSignup, setShowSignup, showAlert, loginAlert, users } = useGlobalContext();
@@ -41,7 +42,16 @@ function Login() {
   }, [])
 
   useEffect(() => {
-
+    if (user) {
+      db.collection("users").doc(user.email).set(user)
+      .then(function(docRef) {
+        alert('User added successfully')
+        // Clear fields
+      })
+      .catch(function(error){
+        alert('Error: user could not be added')
+      })
+    }
   }, [user])
 
   const handleSubmit = async(e) => {
@@ -63,6 +73,7 @@ function Login() {
           password: passwordRef.current.value,
         }
         console.log(newUser);
+        setUser(newUser);
 
         showAlert(true,'success','Redirecting...');
 
