@@ -140,7 +140,6 @@ function Login() {
           </div>
           {showSignup && (
             <>
-            {/* Need to pass in this data to storage */}
               <label htmlFor="fname">First Name</label>
               <input
                 type="text"
