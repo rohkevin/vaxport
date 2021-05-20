@@ -9,6 +9,7 @@ function MainLayout({ children }) {
   const { currentPercentage, setCurrentPercentage } = useGlobalContext();
 
   const { pathname } = useLocation();
+  
   useEffect(() => {
   if (pathname) {
     if (pathname === "/upload-passport") {
@@ -28,7 +29,7 @@ function MainLayout({ children }) {
   }, [pathname])
 
   return (
-    <div className="full-mid">
+    <div className={pathname === '/dashboard' ? 'display-none' : 'full-mid'}>
       <ProgressBar done={currentPercentage}/>
       { children }
     </div>

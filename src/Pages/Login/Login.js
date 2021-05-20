@@ -49,6 +49,10 @@ function Login() {
   
       try {
         await signup(emailRef.current.value, passwordRef.current.value);
+
+        // Add to database
+        
+
         showAlert(true,'success','Redirecting...');
 
         // DEPENDING ON HOW MUCH THE USER HAS COMPLETED:
