@@ -105,22 +105,27 @@ function Login() {
         const nextPath = "/"
         // Check login data against database
         if (users){
-          const oldUser = users.filter((user) => user.email === emailRef.current.value);
+          const oldUser = users.find((user) => user.email === emailRef.current.value);
           console.log(oldUser);
-          // if (oldUser)
+          if (!("nationality" in oldUser) || !("passportNumber" in oldUser)) {
+            console.log("registration incomplete");
+            // history.push("/upload-passport")
+          } else 
+          if (!("recordURL" in oldUser)) {
+            console.log("missing records");
+            // history.push("/upload-records")
+          } else
+          // If not verified by the government yet
+          if (!("governmentVerified" in oldUser) || !oldUser.governmentVerified) {
+            // history.push("/pending-review")
+            console.log("pending review")
+          } else {
+            console.log("everything's there")
+            // history.push("/dashboard")
+          }
         }
-
         showAlert(true,'success','Redirecting...');
         
-        // Conditional redirect
-        // if user has uploaded documents and received verification
-          // history.push("/dashboard")
-        // if user has uploaded documents and is waiting verification
-          // history.push("/pending-review")
-        // if use has not yet uploaded documents
-          // history.push("/create-profile")
-
-        // history.push("/dashboard");
       } catch {
         showAlert(true, 'failure', 'Failed to sign in!')
       }
