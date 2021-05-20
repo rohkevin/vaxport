@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useGlobalContext } from '../../context';
 import { useAuth } from '../../Auth'
@@ -7,8 +7,9 @@ import './Login.scss'
 import LoginMessage from '../../Components/LoginMessage/LoginMessage';
 
 function Login() {
-  const { showSignup, setShowSignup, showAlert, loginAlert } = useGlobalContext();
-  const { signup, login } = useAuth();
+  const { showSignup, setShowSignup, showAlert, loginAlert, users } = useGlobalContext();
+  const { signup, login, currentUser } = useAuth();
+  const [user, setUser] = useState(null);
 
   let history = useHistory();
 
@@ -39,6 +40,10 @@ function Login() {
     }
   }, [])
 
+  useEffect(() => {
+
+  }, [user])
+
   const handleSubmit = async(e) => {
     e.preventDefault();
     // Sign up
@@ -49,9 +54,15 @@ function Login() {
   
       try {
         await signup(emailRef.current.value, passwordRef.current.value);
-
         // Add to database
-        
+        const newUser = {
+          id: emailRef.current.value,
+          email: emailRef.current.value,
+          firstName: fnameRef.current.value,
+          lastName: lnameRef.current.value,
+          password: passwordRef.current.value,
+        }
+        console.log(newUser);
 
         showAlert(true,'success','Redirecting...');
 

@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { db } from './firebase';
 
 const AppContext = React.createContext();
 
@@ -7,7 +8,19 @@ function AppProvider({ children }) {
   const [reviewStatus, setReviewStatus] = useState(true);
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [currentPercentage, setCurrentPercentage] = useState(0);
+  const [users, setUsers] = useState(null);
 
+  useEffect(() => {
+    db.collection("users").onSnapshot(snap => {
+      const registeredUsers = snap.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      console.log(registeredUsers);
+      // setUsers(registeredUsers);
+    })
+
+  }, [])
   const showAlert = (show = false, type = '', msg = '') => {
     setLoginAlert({show, type, msg});
   }
@@ -15,6 +28,7 @@ function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        users, setUsers,
         showSignup, setShowSignup,
         reviewStatus, setReviewStatus,
         loginAlert, showAlert,

@@ -93,7 +93,7 @@ function PassportUpload() {
         <div className={isModalOpen ? "overlay" : "hide-overlay"} onClick={handleOutsideClick}>
           <div className={isModalOpen ? "upload-modal show-modal" : "upload-modal"}>
             <h3>How would you like to upload?</h3>
-            <label for="file-upload" className="custom-file-upload" >
+            <label htmlFor="file-upload" className="custom-file-upload" >
               <FaRegFolderOpen/> From library
             </label>
             <input id="file-upload" type="file" onChange={uploadImage}/>
