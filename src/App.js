@@ -13,11 +13,16 @@ import PendingPage from './Pages/PendingPage/PendingPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
 import QRCode from './Pages/QRCode/QRCode'
 import './theme.scss'
+import { useAuth } from './Auth'
 
 function App() {
+  const { currentUser } = useAuth();
   return (
     <Router>
+      <p>{ currentUser ? currentUser.email : 'not logged in' }</p>
+      
       <Switch>
+        
         <Route exact path="/" component={Home}/>
         {/* Needs to be privateroute from here*/}
         <Route path="/dashboard" component={Dashboard}/>
