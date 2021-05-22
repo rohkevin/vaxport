@@ -1,6 +1,5 @@
 @import './theme.scss';
 
-
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,7 @@
 }
 body {
   background-color: var(--background-default);
-  width: 100vw;
+  max-width: 100vw;
   display: grid;
   place-items: center;
 }

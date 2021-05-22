@@ -1,4 +1,19 @@
 #upload-records {
+  width: 100%;
+  max-width: 100vw;
+  display: grid;
+  place-items: center;
+
+  
+  .text-wrapper{
+    max-width: 100%;
+    padding: 0 30px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
 
   h3{
     margin: 20px 0;
@@ -6,11 +21,11 @@
   p {
     margin-bottom: 40px;
   }
-  .page-wrapper{
-    padding: 0 20px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  figure {
+    max-width: 100%;
+    img {
+      max-width: 100%;
+    }
   }
 }
 
@@ -93,6 +108,7 @@ input[type="file"] {
   border-radius: 10px;
   height: 60px;
   padding: 0;
+
   svg {
     width: 24px;
     height: 24px;

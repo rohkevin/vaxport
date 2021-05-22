@@ -19,7 +19,7 @@ function App() {
   const { currentUser } = useAuth();
   return (
     <Router>
-      <p>{ currentUser ? currentUser.email : 'not logged in' }</p>
+      {/* <p>{ currentUser ? currentUser.email : 'not logged in' }</p> */}
       
       <Switch>
         
