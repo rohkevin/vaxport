@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import './PendingPage.scss'
 
-const verifiedIcon = process.env.PUBLIC_URL + '/assets/icons/verifiedIcon.svg'
+const verifiedIcon = process.env.PUBLIC_URL + '/assets/icons/uploaded.svg'
 
 function PendingPage() {
   let history = useHistory();
