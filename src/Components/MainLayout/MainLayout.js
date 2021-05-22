@@ -31,7 +31,7 @@ function MainLayout({ children }) {
   return (
     <div className={pathname === '/dashboard' ? 'display-none' : 'full-mid'}>
       <ProgressBar done={currentPercentage}/>
-      { children }
+      <div className="children">{ children }</div>
     </div>
   )
 }

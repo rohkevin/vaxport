@@ -9,7 +9,6 @@ function PendingPage() {
 
   return (
     <main id="pending-page">
-      <div className="page-wrapper">
         <figure>
           <img src={verifiedIcon} alt="pending"/>
         </figure>
@@ -18,10 +17,9 @@ function PendingPage() {
         <p>Your documents are under review.</p>
         <p>A notification will be sent to your email when your vaccination badge is ready</p>
         <br/>
-        <p>Please wait up to 7 business days!</p>
-        <button onClick={()=>{history.push("/dashboard")}}>Close Window</button>
+        <p>Please wait up to 7 business days. Updated information will be posted in your dashboard.</p>
+        <button onClick={()=>{history.push("/dashboard")}}>Continue to Dashboard</button>
 
-      </div>
     </main>
   )
 }

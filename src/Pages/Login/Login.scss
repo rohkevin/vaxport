@@ -1,11 +1,4 @@
 
-// .max-width {
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   padding: 0 30px;
-//   align-items: center;
-// }
 label {
   width: 100%;
   max-width: 100%;
@@ -19,9 +12,9 @@ button {
   margin-top: 40px;
 }
 .login-alert {
-  height: 30px;
+  display: block;
+  height: 50px;
   max-width: 100%;
-  margin-bottom: 40px;
 }
 .show-alert {
   max-width: 100%;
