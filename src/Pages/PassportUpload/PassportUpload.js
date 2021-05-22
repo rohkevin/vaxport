@@ -27,7 +27,6 @@ function PassportUpload() {
       alert('fill out required fields')
     } else {
       if (currentUser) {
-        console.log(currentUser.email)
         db.collection("users").doc(currentUser.email).set({
           nationality: country,
           passportNumber: passportRef.current.value
