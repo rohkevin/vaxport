@@ -8,8 +8,9 @@ function CountriesDropdown({ setCountry }) {
       name="country" 
       className="form-control"
       onChange={(e) => setCountry(e.target.value)}
+      defaultValue="Select country on passport"
     >
-      <option disabled selected value="">Select country on passport</option>
+      <option disabled value="Select country on passport">Select country on passport</option>
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
       <option value="Albania">Albania</option>
