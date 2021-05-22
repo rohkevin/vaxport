@@ -33,7 +33,7 @@ function RecordsUpload() {
 
   useEffect(() => {
     if (image && !imageUploaded) {
-      alert('starting upload')
+      // Starting upload
       handleUpload();
     }
 
@@ -41,8 +41,8 @@ function RecordsUpload() {
 
   const uploadImage = (e) => {
     if (e.target.files[0]) {
+      // Image selected
       setImage(e.target.files[0]);
-      alert('image selected');
     }
   }
   
@@ -55,17 +55,18 @@ function RecordsUpload() {
         fname=doc.data().firstName;
         lname=doc.data().lastName;
         pnumber=doc.data().passportNumber;
-        console.log(doc.data());
-        console.log(fname, lname, pnumber);
         childPath = cameraUpload ? fname + lname + pnumber + '_recordUploadImg' : image.name;
       }).then(() => {
-        console.log(childPath);
         if (cameraUpload) {
           // remove the first 23 digits "data:image/jpeg;base64,"
           var shortenedBase64 = image.substr(23);
+          // provide metadata
+          var metadata = {
+            contentType: 'image/jpeg'
+          }
           uploadTask = storage
             .ref(`images/${childPath}`)
-            .putString(shortenedBase64, 'base64')
+            .putString(shortenedBase64, 'base64', metadata)
         } else {
           // const uploadTask = storage.ref(`images/${childPath}`).put(image);
           uploadTask = storage
@@ -86,15 +87,11 @@ function RecordsUpload() {
             .child(childPath)
             .getDownloadURL()
             .then(url => {
-              console.log(url);
-              
               // Store url to user database
               db.collection("users").doc(currentUser.email).set({
                 recordURL: url
               }, { merge: true });
   
-              
-              alert('image uploaded');
               setImage(null);
               setImageUploaded(true);
               setIsModalOpen(false);
@@ -113,6 +110,18 @@ function RecordsUpload() {
   const toggleCameraModal = () => {
     setCameraModal(!cameraModal);
   }
+  const handleContinue = () => {
+    db.collection("users").doc(currentUser.email).get().then((doc) => {
+      // Route to next path if record exists
+      const { recordURL } = doc.data();
+      if (recordURL) {
+        history.push("/pending-review")
+      } else {
+        alert('Your upload could not be completed. Please try again or check back later.')
+      }
+    })
+  }
+
   return (
     <main id="upload-records">
         <figure>
@@ -125,11 +134,20 @@ function RecordsUpload() {
         <form>
           
           <label>Upload Vaccination Record</label>
-          <button type="button" onClick={openUploadModal} className="button-2 upload-btn">{imageUploaded ? 'Upload Completed' : 'Upload'}</button>  
+          <button 
+            type="button" 
+            onClick={openUploadModal} 
+            className="button-2 upload-btn" 
+            >
+            { imageUploaded ? 'Upload Completed!' : 'Upload' }
+          </button>  
 
 
           {/* Needs to be a component */}
-          <div className={isModalOpen ? "overlay" : "hide-overlay"} onClick={handleOutsideClick}>
+          <div 
+            className={isModalOpen ? "overlay" : "hide-overlay"} 
+            onClick={handleOutsideClick} 
+            >
             <div className={isModalOpen ? "upload-modal show-modal" : "upload-modal"}>
               <h3>How would you like to upload?</h3>
 
@@ -154,7 +172,7 @@ function RecordsUpload() {
 
           {/* temp button */}
           {/* Validate that user info is there */}
-          <button type="button" onClick={() => history.push("/pending-review")} className="upload-btn">Continue</button>
+          <button type="button" onClick={handleContinue} className="upload-btn">Continue</button>
         </form>
 
     </main>
