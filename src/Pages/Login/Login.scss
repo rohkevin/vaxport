@@ -1,4 +1,8 @@
-
+#login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 label {
   width: 100%;
   max-width: 100%;

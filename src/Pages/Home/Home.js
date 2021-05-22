@@ -9,7 +9,7 @@ const mainImg = process.env.PUBLIC_URL + '/assets/icons/main.svg'
 function Home() {
   const { setShowSignup } = useGlobalContext();
   return (
-    <main>
+    <main id="home-page">
       <div className="header">
         <h1 className="logo">Vaxport</h1>
         <Link to="/login"><button className="login-btn" onClick={() => setShowSignup(false)}>Sign in</button></Link>

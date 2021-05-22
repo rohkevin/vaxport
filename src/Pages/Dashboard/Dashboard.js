@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+import { useAuth } from '../../Auth';
+import { db } from '../../firebase';
 import './Dashboard.scss'
 
 function Dashboard() {
+  const { currentUser } = useAuth();
+  const [user, setUser] = useState(null);
   let history = useHistory();
+
+  // Get user info on dashboard
+  useEffect(() => {
+    if (currentUser) {
+      db.collection("users").doc(currentUser.email).get().then((doc) => {
+        const { firstName, lastName, email, passportNumber, recordURL } = doc.data();
+
+      })
+
+    }
+  }, [])
+
   return (
     <main id="dashboard">
       <div className="page-wrapper">

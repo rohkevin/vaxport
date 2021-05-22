@@ -38,7 +38,7 @@ function PassportUpload() {
     
   }
   return (
-    <main>
+    <main id="upload-passport">
       <form>
         <label htmlFor="country">Country</label>
         <CountriesDropdown setCountry={setCountry}/>

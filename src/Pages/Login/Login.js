@@ -133,7 +133,7 @@ function Login() {
   }
 
   return (
-    <main>
+    <main id="login-page">
       <form>
           <div className={showAlert ? "login-alert show-alert" : "login-alert"}>
             {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}

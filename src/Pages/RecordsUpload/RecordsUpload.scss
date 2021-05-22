@@ -1,9 +1,9 @@
 #upload-records {
   width: 100%;
   max-width: 100vw;
-  display: grid;
-  place-items: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   
   .text-wrapper{
     max-width: 100%;
