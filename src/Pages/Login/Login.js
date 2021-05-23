@@ -116,7 +116,7 @@ function Login() {
             nextPath = "/upload-records";
           } else
           // If not verified by the government yet
-          if (!("governmentVerified" in oldUser) || !oldUser.governmentVerified) {
+          if (!("governmentVerified" in oldUser)) {
             nextPath = "/pending-review"
             // console.log("pending review")
           } else {
