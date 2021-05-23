@@ -11,7 +11,12 @@
 }
 .news-location {
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
+  color: #757575;
+  svg {
+    margin-right: 10px;
+  }
 }
 .divider {
   width: 100%;
