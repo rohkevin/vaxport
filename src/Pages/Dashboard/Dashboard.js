@@ -53,7 +53,7 @@ function Dashboard() {
         <figure>
           <img src={peoplePic} alt="dashboard-header"/>
         </figure>
-        <h2>Welcome back</h2>
+        <h4>Welcome back</h4>
         <h1>{user.name}</h1>
         <div className="dashboard-buttons">
           <button 
