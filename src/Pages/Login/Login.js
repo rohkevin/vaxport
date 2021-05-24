@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useGlobalContext } from '../../context';
 import { useAuth } from '../../Auth'
 import './Login.scss'
-
+import { generateUID } from '../../Utils/generateUID'
 import LoginMessage from '../../Components/LoginMessage/LoginMessage';
 import { db } from '../../firebase';
 
@@ -64,15 +64,16 @@ function Login() {
   
       try {
         await signup(emailRef.current.value, passwordRef.current.value);
+        const newID = fnameRef.current.value + lnameRef.current.value + generateUID();
         // Add to database
         const newUser = {
-          id: emailRef.current.value,
+          id: newID,
           email: emailRef.current.value,
           firstName: fnameRef.current.value,
           lastName: lnameRef.current.value,
           password: passwordRef.current.value,
         }
-        console.log(newUser);
+        // console.log(newUser);
         setUser(newUser);
 
         showAlert(true,'success','Redirecting...');
@@ -106,7 +107,6 @@ function Login() {
         // Check login data against database
         if (users){
           const oldUser = users.find((user) => user.email === emailRef.current.value);
-          console.log(oldUser);
           if (!("nationality" in oldUser) || !("passportNumber" in oldUser)) {
             // console.log("registration incomplete");
             nextPath = "/upload-passport";
