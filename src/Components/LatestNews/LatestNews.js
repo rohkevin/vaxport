@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { GrLocation } from 'react-icons/gr'
 import './LatestNews.scss'
 import { generateDate } from '../../Utils/generateDate'
@@ -42,10 +42,10 @@ function LatestNews() {
         news && 
           news.map((article) => {
             return (
-              <>
-              <div className="divider" />
-              <NewsContainer key={article.url} {...article} />
-              </>
+              <Fragment key={article.url}>
+                <div className="divider" />
+                <NewsContainer key={article.url} {...article} />
+              </Fragment>
             )
           })
       }
