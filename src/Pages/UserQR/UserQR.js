@@ -10,15 +10,15 @@ import { FiArrowLeft } from 'react-icons/fi'
 
 function UserQR() {
   const { currentUser } = useAuth();
-  const { user } = useGlobalContext();
+  const { user, homeURL } = useGlobalContext();
   const [qr, setQr] = useState(null);
   const [govVerif, setGovVerif] = useState(null);
   let history = useHistory();
   
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser && user) {
       const userRef = db.collection("users").doc(currentUser.email);
-      
+
       // Get QR
       userRef.get().then((doc) => {
         const { userQRimage } = doc.data();
@@ -36,13 +36,11 @@ function UserQR() {
           // Generate QR code
           // Generate unique QR URL and id to store to server, only if qr image is not there
           if (!userQRimage) {
-
-            QRCode.toDataURL('Testing', { width: 300 })
+            // QRCode.toDataURL(`${homeURL}/QR/user=${user.id}`, { width: 300 })
+            QRCode.toDataURL(`/QR/user=${user.id}`, { width: 300 })
             .then(url => {
               // url returns a base64 string image, metadata image/png
               // store to user then render set to state, render
-              console.log(url);
-  
 
               let fname, lname, pnumber, childPath;
               let uploadTask;
@@ -101,9 +99,9 @@ function UserQR() {
     }
 
 
-  }, [currentUser])
+  }, [currentUser, user])
 
-  if (qr && govVerif === true) {
+  if (qr && govVerif === true && user) {
     return (
       <main id="qrcode">
         <div  className="button-wrapper">
