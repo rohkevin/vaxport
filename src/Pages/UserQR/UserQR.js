@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { FiArrowLeft } from 'react-icons/fi'
-import './UserQR.scss'
 import { useAuth } from '../../Auth'
 import { db, storage } from '../../firebase'
 import QRCode from 'qrcode'
-import { useGlobalContext } from '../../context'
 
-const qrImage = process.env.PUBLIC_URL + '/assets/icons/QRCode.svg'
+import { useGlobalContext } from '../../context'
+import './UserQR.scss'
+import { FiArrowLeft } from 'react-icons/fi'
 
 function UserQR() {
   const { currentUser } = useAuth();
@@ -17,9 +16,10 @@ function UserQR() {
   let history = useHistory();
   
   useEffect(() => {
-    if (currentUser){
-      // Get QR
+    if (currentUser) {
       const userRef = db.collection("users").doc(currentUser.email);
+      
+      // Get QR
       userRef.get().then((doc) => {
         const { userQRimage } = doc.data();
         // Only re-set if qr image path is diff
@@ -28,13 +28,7 @@ function UserQR() {
         }
       })
 
-    }
-  }, [currentUser])
-  
-  useEffect(() => {
-    if (currentUser) {
       // Generate QR
-      const userRef = db.collection("users").doc(currentUser.email);
       userRef.get().then((doc) => {
         const { governmentVerified, userQRimage } = doc.data();
         if (governmentVerified) {
