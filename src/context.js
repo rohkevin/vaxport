@@ -14,13 +14,14 @@ function AppProvider({ children }) {
 
   const { currentUser } = useAuth();
 
+  const homeURL = "https://UNKNOWNLINKYET.com"
+
   useEffect(() => {
     db.collection("users").onSnapshot(snap => {
       const registeredUsers = snap.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       }));
-      // console.log(registeredUsers);
       setUsers(registeredUsers);
     })
 
@@ -46,6 +47,7 @@ function AppProvider({ children }) {
         reviewStatus, setReviewStatus,
         loginAlert, showAlert,
         currentPercentage, setCurrentPercentage,
+        homeURL
       }}
     >
       { children }
