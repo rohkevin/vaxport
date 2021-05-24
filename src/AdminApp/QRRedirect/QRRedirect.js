@@ -35,15 +35,18 @@ function QRRedirect() {
             <h2>Vaccination Passport</h2>
             <div className="user-info">
               <span className="table-label">Name</span>
-              <span className="table-value">{`${verifiedUser.firstName} ${verifiedUser.lastName}`}</span>
+              <span className="table-value">
+              {`${verifiedUser.firstName.charAt(0).toUpperCase() + verifiedUser.firstName.slice(1)} ${verifiedUser.lastName.charAt(0).toUpperCase() + verifiedUser.lastName.slice(1)}`}
+              </span>
               <span className="table-label">Date of Birth</span>
-              <span className="table-value">{`${verifiedUser.passportNumber}`}</span>
+              <span className="table-value">{`${verifiedUser.DOB}`}</span>
               <span className="table-label">Passport Number</span>
               <span className="table-value">{`${verifiedUser.passportNumber}`}</span>
-              <span className="table-label">Vaccination Provider</span>
-              <span className="table-value">{`${verifiedUser.provider}`}</span>
+              {/* Currently info below is assumed to be given by gpv database along with DOB, will need to incorporate a gov database to simulate this */}
+              <span className="table-label">Authorized Vaccination Organization</span>
+              <span className="table-value">{`${verifiedUser.vaccineProvider}`}</span>
               <span className="table-label">Vaccine Agent</span>
-              <span className="table-value">{`${verifiedUser.agent}`}</span>
+              <span className="table-value">{`${verifiedUser.vaccineType}`}</span>
               <span className="table-label">Date of Vaccination</span>
               <span className="table-value">{`${verifiedUser.vaccineDate}`}</span>
             </div>

@@ -4,6 +4,8 @@
   padding: 0 20px;
   display: grid;
   place-items: center;
+  position: absolute;
+  top: 0; left: 0;
 
   .header {
     width: 100%;
@@ -11,11 +13,10 @@
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    position: absolute;
-    top: 0;
+    padding: 0;
   }
   .logo {
-    position: absolute;
+    margin-bottom: 40px;
   }
 
   h2 {
@@ -27,6 +28,7 @@
     width: 100%;
     place-items: center;
     margin: 0 20px;
+    margin-bottom: 60px;
     padding: 0 10px;
     padding-top: 40px;
     text-align: center;
