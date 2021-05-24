@@ -9,7 +9,6 @@ function LatestNews() {
 
   useEffect(() => {
     var todayDate = generateDate();
-    console.log(todayDate);
     var url = 'https://newsapi.org/v2/top-headlines?' +
       'q=COVID&' +
       `from=${todayDate}&` +
@@ -24,7 +23,6 @@ function LatestNews() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       setNews(data.articles.slice(0,5));
     })
 
