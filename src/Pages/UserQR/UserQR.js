@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 import './UserQR.scss'
 import { useAuth } from '../../Auth'
@@ -14,6 +14,8 @@ function UserQR() {
   const { user } = useGlobalContext();
   const [qr, setQr] = useState(null);
   const [govVerif, setGovVerif] = useState(null);
+  let history = useHistory();
+  
   useEffect(() => {
     if (currentUser){
       // Get QR
@@ -150,6 +152,7 @@ function UserQR() {
         <div className="page-wrapper" style={{ border: 'none'}}>
           <h2>This user could not be verified.</h2> 
           <p>Please try uploading documents again or contact your health record issuer.</p>
+          <button className="button" onClick={() => history.push("/upload-records")}>Upload Records</button>
         </div>
       </main>
     )

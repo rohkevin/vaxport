@@ -39,8 +39,6 @@ function Dashboard() {
     if (user.governmentVerified === null) {
       history.push("/pending-review");
     } else if (user.governmentVerified === false) {
-      // Error message should be shown first in dashboard
-      // Button click does not work for anything
       history.push("/QRCode")
     } else if (user.governmentVerified === true) {
       // Generate code 
