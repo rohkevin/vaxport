@@ -112,16 +112,12 @@ function UserQR() {
         <div className="page-wrapper">
           <h2>Vaccination Passport</h2>
           <p>This QR code is valid in over 50 countries globally as your proof of vaccination.</p>
-          <table className="user-info">
-            <tr>
-              <td className="table-label">Name</td>
-              <td className="table-value">{ user ? `${user.firstName} ${user.lastName}` : 'username'}</td>
-            </tr>
-            <tr>
-              <td className="table-label">Passport</td>
-              <td className="table-value">{ user ? `${user.passportNumber}` : 'A1A1A1A1'}</td>
-            </tr>
-          </table>
+          <div className="user-info">
+            <span className="table-label">Name</span>
+            <span className="table-value">{ user ? `${user.firstName} ${user.lastName}` : 'username'}</span>
+            <span className="table-label">Passport</span>
+            <span className="table-value">{ user ? `${user.passportNumber}` : 'A1A1A1A1'}</span>
+          </div>
 
           <div className="qr-image">
             <figure>

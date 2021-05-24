@@ -12,7 +12,7 @@ import RecordsUpload from './Pages/RecordsUpload/RecordsUpload.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
 import UserQR from './Pages/UserQR/UserQR'
-import QRRedirect from './Pages/QRRedirect/QRRedirect'
+import QRRedirect from './AdminApp/QRRedirect/QRRedirect'
 import './theme.scss'
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
         <Route path="/dashboard" component={Dashboard}/>
         <Route path="/QRCode" component={UserQR}/>
 
-        {/* This route can only be viewed by secured logins */}
-        <Route path="/QR/user=:user" component={QRRedirect} />
+        {/* ADMIN APP: This route can only be viewed by secured logins */}
+        <Route path="/QR/user=:userID" component={QRRedirect} />
         
         <MainLayout>
           <Route exact path="/login" component={Login}/>
