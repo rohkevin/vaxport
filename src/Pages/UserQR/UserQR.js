@@ -13,7 +13,7 @@ function UserQR() {
   const { currentUser } = useAuth();
   const { user } = useGlobalContext();
   const [qr, setQr] = useState(null);
-
+  const [govVerif, setGovVerif] = useState(null);
   useEffect(() => {
     if (currentUser){
       // Get QR
@@ -36,6 +36,7 @@ function UserQR() {
       userRef.get().then((doc) => {
         const { governmentVerified, userQRimage } = doc.data();
         if (governmentVerified) {
+          setGovVerif(true);
           // Generate QR code
           // Generate unique QR URL and id to store to server, only if qr image is not there
           if (!userQRimage) {
@@ -98,7 +99,7 @@ function UserQR() {
           }
 
         } else {
-          alert('This user is not verified')
+          setGovVerif(false);
         }
       })
     }
@@ -106,7 +107,7 @@ function UserQR() {
 
   }, [currentUser])
 
-  if (qr) {
+  if (qr && govVerif === true) {
     return (
       <main id="qrcode">
         <div  className="button-wrapper">
@@ -139,6 +140,19 @@ function UserQR() {
       </main>
     )
 
+  } else if (govVerif === false) {
+    return (
+      <main id="qrcode">
+        <div  className="button-wrapper">
+          <Link to="/dashboard" className="link"><button type="button" className="icon-btn"><FiArrowLeft/></button></Link>
+        </div>
+
+        <div className="page-wrapper" style={{ border: 'none'}}>
+          <h2>This user could not be verified.</h2> 
+          <p>Please try uploading documents again or contact your health record issuer.</p>
+        </div>
+      </main>
+    )
   } else {
     return (
       <main id="qrcode">
@@ -146,8 +160,8 @@ function UserQR() {
           <Link to="/dashboard" className="link"><button type="button" className="icon-btn"><FiArrowLeft/></button></Link>
         </div>
 
-        <div className="page-wrapper">
-          <h1>QR code could not be generated</h1>
+        <div className="page-wrapper" style={{ border: 'none'}}>
+          <h1>Loading...</h1>
         </div>
       </main>
     )

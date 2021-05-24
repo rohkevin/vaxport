@@ -41,7 +41,7 @@ function Dashboard() {
     } else if (user.governmentVerified === false) {
       // Error message should be shown first in dashboard
       // Button click does not work for anything
-      alert('Records invalid!!!')
+      history.push("/QRCode")
     } else if (user.governmentVerified === true) {
       // Generate code 
       history.push("/QRCode");
