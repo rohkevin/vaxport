@@ -3,8 +3,9 @@ import { useHistory } from 'react-router'
 import { useAuth } from '../../Auth';
 import { db } from '../../firebase';
 import './Dashboard.scss'
-
+import { FiSettings } from 'react-icons/fi'
 import LatestNews from '../../Components/LatestNews/LatestNews';
+import { Link } from 'react-router-dom';
 const peoplePic = process.env.PUBLIC_URL + '/assets/icons/people.jpg';
 
 function Dashboard() {
@@ -50,6 +51,11 @@ function Dashboard() {
   if (user) {
     return (
       <main id="dashboard">
+        <div className="header">
+          <Link to="/"><h1 className="logo">Vaxport</h1></Link>
+          <Link to="/" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link>
+        </div>
+
         <figure>
           <img src={peoplePic} alt="dashboard-header"/>
         </figure>
@@ -77,7 +83,8 @@ function Dashboard() {
   } else {
     return (
       <main id="dashboard">
-        <h2>No user</h2>
+
+        <h2>Loading...</h2>
       </main>
     )
   }
