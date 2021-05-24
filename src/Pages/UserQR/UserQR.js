@@ -5,30 +5,34 @@ import './UserQR.scss'
 import { useAuth } from '../../Auth'
 import { db, storage } from '../../firebase'
 import QRCode from 'qrcode'
+import { useGlobalContext } from '../../context'
 
 const qrImage = process.env.PUBLIC_URL + '/assets/icons/QRCode.svg'
 
 function UserQR() {
   const { currentUser } = useAuth();
+  const { user } = useGlobalContext();
   const [qr, setQr] = useState(null);
 
-  const userRef = db.collection("users").doc(currentUser.email);
-
-  // Get QR
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser){
+      // Get QR
+      const userRef = db.collection("users").doc(currentUser.email);
       userRef.get().then((doc) => {
         const { userQRimage } = doc.data();
-        if (userQRimage) {
+        // Only re-set if qr image path is diff
+        if (userQRimage && qr !== userQRimage) {
           setQr(userQRimage)
         }
       })
+
     }
   }, [currentUser])
-
-  // Generate QR
+  
   useEffect(() => {
     if (currentUser) {
+      // Generate QR
+      const userRef = db.collection("users").doc(currentUser.email);
       userRef.get().then((doc) => {
         const { governmentVerified, userQRimage } = doc.data();
         if (governmentVerified) {
@@ -36,7 +40,7 @@ function UserQR() {
           // Generate unique QR URL and id to store to server, only if qr image is not there
           if (!userQRimage) {
 
-            QRCode.toDataURL('Testing')
+            QRCode.toDataURL('Testing', { width: 300 })
             .then(url => {
               // url returns a base64 string image, metadata image/png
               // store to user then render set to state, render
@@ -81,7 +85,7 @@ function UserQR() {
                       userRef.set({
                         userQRimage: url
                       }, { merge: true });
-          
+                      setQr(url);
                     })
                   }
                 )
@@ -99,29 +103,28 @@ function UserQR() {
       })
     }
 
+
   }, [currentUser])
 
-
-  return (
-    <main id="qrcode">
-      <div  className="button-wrapper">
-        <Link to="/dashboard" className="link"><button type="button" className="icon-btn"><FiArrowLeft/></button></Link>
-
-      </div>
-
-      {
-        qr ? 
+  if (qr) {
+    return (
+      <main id="qrcode">
+        <div  className="button-wrapper">
+          <Link to="/dashboard" className="link"><button type="button" className="icon-btn"><FiArrowLeft/></button></Link>
+  
+        </div>
+  
         <div className="page-wrapper">
           <h2>Vaccination Passport</h2>
           <p>This QR code is valid in over 50 countries globally as your proof of vaccination.</p>
           <table className="user-info">
             <tr>
-              <td>Name</td>
-              <td>NameVal</td>
+              <td className="table-label">Name</td>
+              <td className="table-value">{ user ? `${user.firstName} ${user.lastName}` : 'username'}</td>
             </tr>
             <tr>
-              <td>Passport</td>
-              <td>PassportVal</td>
+              <td className="table-label">Passport</td>
+              <td className="table-value">{ user ? `${user.passportNumber}` : 'A1A1A1A1'}</td>
             </tr>
           </table>
 
@@ -132,14 +135,23 @@ function UserQR() {
           </div>
 
         </div>
-        :
+        
+      </main>
+    )
+
+  } else {
+    return (
+      <main id="qrcode">
+        <div  className="button-wrapper">
+          <Link to="/dashboard" className="link"><button type="button" className="icon-btn"><FiArrowLeft/></button></Link>
+        </div>
+
         <div className="page-wrapper">
           <h1>QR code could not be generated</h1>
         </div>
-      }
-      
-    </main>
-  )
+      </main>
+    )
+  }
 }
 
 export default UserQR

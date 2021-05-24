@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useAuth } from './Auth';
 import { db } from './firebase';
 
 const AppContext = React.createContext();
@@ -9,6 +10,9 @@ function AppProvider({ children }) {
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [currentPercentage, setCurrentPercentage] = useState(0);
   const [users, setUsers] = useState(null);
+  const [user, setUser] = useState(null);
+
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     db.collection("users").onSnapshot(snap => {
@@ -21,6 +25,14 @@ function AppProvider({ children }) {
     })
 
   }, [])
+  useEffect(() => {
+    if (currentUser) {
+      db.collection("users").doc(currentUser.email).get().then(doc => {
+        setUser(doc.data());
+      })
+    }
+  }, [currentUser])
+
   const showAlert = (show = false, type = '', msg = '') => {
     setLoginAlert({show, type, msg});
   }
@@ -28,6 +40,7 @@ function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        user,
         users, setUsers,
         showSignup, setShowSignup,
         reviewStatus, setReviewStatus,

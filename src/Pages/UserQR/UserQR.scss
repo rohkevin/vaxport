@@ -21,12 +21,13 @@
     }
   }
   h2 {
-    margin-top: 108px;
+    
     margin-bottom: 10px;
   }
   .page-wrapper {
     display: grid;
     place-items: center;
+    margin-top: 108px;
     padding: 0 20px;
     text-align: center;
   }
@@ -45,4 +46,22 @@
       width: 100%;
     }
   }
+}
+
+.user-info {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 50px;
+  text-align: left;
+  border-spacing: 0 15px;
+}
+.table-label {
+  font-weight: 600;
+  width: 30%;
+}
+.table-value {
+  background: #F9F9F9;
+  padding: 10px 0;
+  padding-left: 15px;
+  border-radius: 5px;
 }
