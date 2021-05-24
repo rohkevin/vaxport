@@ -66,7 +66,7 @@ function RecordsUpload() {
           }
           uploadTask = storage
             .ref(`images/${childPath}`)
-            .putString(shortenedBase64, 'base64', metadata)
+            .putString(shortenedBase64, 'base64', metadata);
         } else {
           // const uploadTask = storage.ref(`images/${childPath}`).put(image);
           uploadTask = storage
@@ -78,12 +78,11 @@ function RecordsUpload() {
           snapshot => {
           },
           error => {
-            console.log(error);
+            alert(error);
           },
           () => {
             storage
             .ref("images")
-            // .child(image.name)
             .child(childPath)
             .getDownloadURL()
             .then(url => {

@@ -33,9 +33,16 @@
 
 }
 .qr-image {
-  height: 206px;
-  width: auto;
+  width: 100%;
   margin: 20px 0;
   display: grid;
   place-items: center;
+
+  figure {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
 }
