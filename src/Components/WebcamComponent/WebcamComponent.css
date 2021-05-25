@@ -1,0 +1,41 @@
+#webcam {
+  position: relative;
+}
+
+#webcam img,
+#webcam video,
+#webcam .capture-button {
+  display: block;
+}
+
+#webcam .camera-footer {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#webcam .camera-footer .capture-button {
+  width: 60px;
+  min-width: 0;
+  background-color: transparent;
+}
+
+#webcam .camera-footer .capture-button svg {
+  padding: 0;
+  margin: 0;
+  color: white;
+  width: 100%;
+  height: auto;
+}
+/*# sourceMappingURL=WebcamComponent.css.map */

@@ -1,0 +1,78 @@
+#home-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.header .logo {
+  color: var(--primary-main);
+  font-size: 36px;
+}
+
+.header .login-btn {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  background-color: #ffffff;
+  color: var(--primary-main);
+  border: 1px solid var(--primary-main);
+  border-radius: 20px;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 7px 16px;
+}
+
+.header .login-btn:visited {
+  color: #ffffff;
+}
+
+.home-intro {
+  text-align: center;
+}
+
+.home-intro h2 {
+  color: var(--primary-main);
+  padding: 0 30px;
+  padding-bottom: 20px;
+}
+
+.home-intro p {
+  padding: 0 30px;
+  color: var(--dark-gray);
+}
+
+.home-intro figure {
+  max-width: 100%;
+}
+
+.home-intro figure img {
+  max-width: 100%;
+}
+/*# sourceMappingURL=Home.css.map */

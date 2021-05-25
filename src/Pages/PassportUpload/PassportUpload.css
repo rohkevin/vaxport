@@ -1,0 +1,130 @@
+#upload-passport {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.overlay {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  background: #0000008c;
+}
+
+.hide-overlay {
+  visibility: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.upload-modal {
+  position: fixed;
+  bottom: -100%;
+  width: 100vw;
+  height: 250px;
+  padding: 30px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: var(--background-default);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  opacity: 0;
+  visibility: none;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.upload-modal button {
+  width: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upload-modal button svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.show-modal {
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  height: 250px;
+  position: fixed;
+  bottom: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
+  width: 100%;
+  height: 100%;
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  background-color: var(--primary-main);
+  color: #ffffff;
+  border: transparent;
+  border-radius: 10px;
+  height: 60px;
+  padding: 0;
+}
+
+.custom-file-upload svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.upload-btn {
+  width: 100%;
+}
+
+.countries-input-container {
+  max-width: 100%;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=PassportUpload.css.map */

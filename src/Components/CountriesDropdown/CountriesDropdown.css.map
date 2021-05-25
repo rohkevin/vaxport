@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,QAAQ,EAAE,MAAM;EAChB,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,SAAS;EAClB,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,gBAAgB;EACvB,MAAM,EAAE,WAAW;EACnB,aAAa,EAAE,GAAG;CACnB",
+    "sources": [
+        "CountriesDropdown.scss"
+    ],
+    "names": [],
+    "file": "CountriesDropdown.css"
+}

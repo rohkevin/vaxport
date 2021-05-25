@@ -1,0 +1,16 @@
+.scanner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000be;
+  opacity: 0;
+  display: none;
+}
+
+.show-scanner {
+  opacity: 1;
+  display: block;
+}
+/*# sourceMappingURL=QRScannerModal.css.map */

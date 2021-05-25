@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,UAAU;CAM5B;;AAdD,AAUE,SAVO,CAUP,SAAS,CAAC;EACR,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,CAAC;CACb",
+    "sources": [
+        "MainLayout.scss"
+    ],
+    "names": [],
+    "file": "MainLayout.css"
+}

@@ -1,0 +1,84 @@
+#dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30px;
+  padding-top: 120px;
+  width: 100vw;
+  margin-bottom: 100px;
+}
+
+#dashboard figure {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+#dashboard figure img {
+  width: 100%;
+}
+
+#dashboard h4 {
+  margin-bottom: 10px;
+}
+
+#dashboard h1 {
+  margin-bottom: 10px;
+}
+
+#dashboard .header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  position: absolute;
+  top: 0;
+}
+
+#dashboard .logo {
+  position: absolute;
+}
+
+#dashboard .link {
+  position: absolute;
+  right: 30px;
+}
+
+#dashboard .icon-btn {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+#dashboard .icon-btn svg {
+  font-size: 26px;
+  color: var(--dark-gray);
+}
+
+.dashboard-buttons {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dashboard-buttons .button {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 45px;
+  height: 50px;
+}
+/*# sourceMappingURL=Dashboard.css.map */

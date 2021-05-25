@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function QRScanner() {
+  const [result, setResult] = useState(null);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js";
-    script.async = true;
-    
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, [])
-
-  
+  const handleError = (err) => {
+    console.log(err);
+  }
+  const handleScan = (data) => {
+    console.log(data);
+    // setResult(data);
+  }
 
   return (
-    <div id="reader" width="600px">
-      
+    <div>
+    
     </div>
   )
 }

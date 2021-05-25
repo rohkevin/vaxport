@@ -1,0 +1,36 @@
+:root {
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-primary-hover: #e0e0e0;
+  --text-secondary: rgba(0, 0, 0, 0.54);
+  --text-secondary-hover: #f5f5f5;
+  --primary-light: #7986cb;
+  --primary-main: #1A3E88;
+  --primary-dark: #7986cb;
+  --primary-text: #fff;
+  --accent-main: #FF9263;
+  --dark-gray: #939A9A;
+  --light-gray: #C4C4C4;
+  --error-light: #e57373;
+  --error-main: #f44336;
+  --error-dark: #d32f2f;
+  --error-text: #fff;
+  --success-light: #81c784;
+  --success-main: #4caf50;
+  --success-dark: #388e3c;
+  --success-text: rgba(0, 0, 0, 0.87);
+  --background-paper: #F3F6F9;
+  --background-default: #ffffff;
+  --text-link-underline-color: rgba(255, 123, 123, 0.18);
+  --url-link-color: #757575;
+  --url-link-hover: #212121;
+  --transition-fast1: all 0.1s ease-in-out;
+  --transition-fast2: all 0.3s ease-in-out;
+  --transition-slow: all 0.7s ease-in-out;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --shadow-light: 5px 5px 15px 5px #ebebebd4;
+  --shadow-dark: 5px 5px 15px 5px #545454d4;
+}
+/*# sourceMappingURL=theme.css.map */
