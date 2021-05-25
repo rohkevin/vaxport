@@ -14,6 +14,7 @@ import Dashboard from './Pages/Dashboard/Dashboard.js'
 import UserQR from './Pages/UserQR/UserQR'
 import QRRedirect from './AdminApp/QRRedirect/QRRedirect'
 import './theme.scss'
+import AdminLogin from './AdminApp/AdminLogin/AdminLogin'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/QRCode" component={UserQR}/>
 
         {/* ADMIN APP: This route can only be viewed by secured logins */}
+        <Route path="/certified" component={AdminLogin} />
         <Route path="/QR/user=:userID" component={QRRedirect} />
         
         <MainLayout>
