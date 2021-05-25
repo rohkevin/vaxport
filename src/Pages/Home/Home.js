@@ -56,7 +56,7 @@ function Home() {
             <img src={mainImg} alt="Intro to Vaxport"/>
           </figure>
           <h2>Say hello to Vaxport! Globally approved Covid-19 vaccine certification passport platform.</h2>
-          <p>We get rid of struggles proving your vaccination record. Make your business trip and vacation more seamlessly</p>
+          <p>We get rid of struggles proving your vaccination record. Make your business trip and vacation more accessible.</p>
 
           <Link to="/login"><button className="home-btn" onClick={() => setShowSignup(true)}>GET STARTED</button></Link>
           
