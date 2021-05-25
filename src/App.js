@@ -12,9 +12,11 @@ import RecordsUpload from './Pages/RecordsUpload/RecordsUpload.js'
 import PendingPage from './Pages/PendingPage/PendingPage.js'
 import Dashboard from './Pages/Dashboard/Dashboard.js'
 import UserQR from './Pages/UserQR/UserQR'
+import SettingsPage from './Pages/SettingsPage/SettingsPage'
+
 import QRRedirect from './AdminApp/QRRedirect/QRRedirect'
-import './theme.scss'
 import AdminLogin from './AdminApp/AdminLogin/AdminLogin'
+import './theme.scss'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         {/* ADMIN APP: This route can only be viewed by secured logins */}
         <Route path="/certified" component={AdminLogin} />
         <Route path="/QR/user=:userID" component={QRRedirect} />
+
+        <Route path="/settings" component={SettingsPage}/>
         
         <MainLayout>
           <Route exact path="/login" component={Login}/>

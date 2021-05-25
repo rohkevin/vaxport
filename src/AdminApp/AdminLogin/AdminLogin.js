@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { useAuth } from '../../Auth';
 import { db } from '../../firebase';
+import './AdminLogin.scss'
 
 import QRScannerModal from '../QRScannerModal/QRScannerModal'
 
-const peoplePic = process.env.PUBLIC_URL + '/assets/icons/people.jpg';
+const securePic = process.env.PUBLIC_URL + '/assets/icons/secure.jpg';
+
 function AdminLogin() {
   const { currentUser } = useAuth();
   const [user, setUser] = useState(null);
@@ -36,26 +38,23 @@ function AdminLogin() {
   const toggleScannerModal = () => {
     setScannerModal(!scannerModal);
   }
-  const handleOutsideClick = (e) => {
-    if (e.target.classList.contains('overlay')) {
-      // setScannerModal(false);
-    }
-  }
 
   if (user) {
     return (
-      <main id="dashboard">
+      <main id="admin-dashboard">
           <div className="header">
             <Link to="/"><h1 className="logo">Vaxport</h1></Link>
-            <Link to="/" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link>
+            <Link to="/settings" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link>
           </div>
   
           <figure>
-            <img src={peoplePic} alt="dashboard-header"/>
+            <img src={securePic} alt="admin-header"/>
           </figure>
 
           <h4>Welcome back</h4>
           <h1>{user.name}</h1>
+
+          <p>Vaxport is accepted in over 50 countries as a global proof of vaccination for travellers.</p>
           <button 
             type="button" 
             className="button"
