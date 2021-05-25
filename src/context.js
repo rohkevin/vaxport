@@ -11,6 +11,7 @@ function AppProvider({ children }) {
   const [currentPercentage, setCurrentPercentage] = useState(0);
   const [users, setUsers] = useState(null);
   const [user, setUser] = useState(null);
+  const [adminAccess, setAdminAccess] = useState(false);
 
   const { currentUser } = useAuth();
 
@@ -33,6 +34,13 @@ function AppProvider({ children }) {
       })
     }
   }, [currentUser])
+  useEffect(() => {
+    if (user) {
+      if ("adminAccess" in user) {
+        setAdminAccess(true);
+      }
+    }
+  },[user])
 
   const showAlert = (show = false, type = '', msg = '') => {
     setLoginAlert({show, type, msg});
@@ -47,7 +55,8 @@ function AppProvider({ children }) {
         reviewStatus, setReviewStatus,
         loginAlert, showAlert,
         currentPercentage, setCurrentPercentage,
-        homeURL
+        homeURL,
+        adminAccess
       }}
     >
       { children }
