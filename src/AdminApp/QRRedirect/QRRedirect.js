@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { useGlobalContext } from '../../context'
 import { db } from '../../firebase';
 import './QRRedirect.scss'
 
@@ -18,7 +17,6 @@ function QRRedirect() {
         let docData = doc.data();
         if (docData.id === userID) { 
           setVerifiedUser(doc.data())
-          console.log(doc.data());
         }
       })
     })
