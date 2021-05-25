@@ -65,6 +65,7 @@ function AdminLogin() {
             isOpen={scannerModal} 
             toggleScannerModal={toggleScannerModal}
           />
+          <p>*Please use Chrome, Edge, or Opera browser to use the scanner</p>
         </main>
     )
   } else {
