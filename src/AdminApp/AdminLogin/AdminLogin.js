@@ -30,6 +30,9 @@ function AdminLogin() {
   const openScanner = () => {
     setScannerModal(true);
   }
+  const closeScanner = () => {
+    setScannerModal(false);
+  }
   const toggleScannerModal = () => {
     setScannerModal(!scannerModal);
   }
@@ -64,8 +67,8 @@ function AdminLogin() {
           <QRScannerModal 
             isOpen={scannerModal} 
             toggleScannerModal={toggleScannerModal}
+            closeScanner={closeScanner}
           />
-          <p>*Please use Chrome, Edge, or Opera browser to use the scanner</p>
         </main>
     )
   } else {

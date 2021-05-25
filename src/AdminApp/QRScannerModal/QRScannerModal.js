@@ -5,7 +5,7 @@ import './QRScannerModal.scss'
 import QRScanner from '../QRScanner/QRScanner'
 
 import {FaChevronUp} from 'react-icons/fa'
-function QRScannerModal({ isOpen, toggleScannerModal, image, setImage, setCameraUpload }) {
+function QRScannerModal({ isOpen, toggleScannerModal, closeScanner }) {
   return (
     <div className={ isOpen ? 'show-scanner scanner-modal' : 'scanner-modal' }>
       {isOpen && (
@@ -13,7 +13,7 @@ function QRScannerModal({ isOpen, toggleScannerModal, image, setImage, setCamera
           <div className="scanner-head">
             <button onClick={toggleScannerModal}><FaChevronUp /></button>
           </div>
-          <QRScanner />
+          <QRScanner closeScanner={closeScanner}/>
         </>
       )}
       
