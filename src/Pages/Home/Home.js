@@ -12,7 +12,7 @@ const mainImg = process.env.PUBLIC_URL + '/assets/icons/main.svg'
 
 function Home() {
   const { user, setShowSignup, adminAccess } = useGlobalContext();
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
   const [sidenavOpen, setSidenavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -35,7 +35,7 @@ function Home() {
           <div className="sidenav-links">
             <Link to={adminAccess ? "/certified" : "/dashboard"} className="nav-link"><GoVerified /><p>Dashboard</p></Link>
             <Link to="/settings" className="nav-link"><FiSettings /><p>Settings</p></Link>
-            <button className="nav-link signout"><MdExitToApp/>Sign out</button>
+            <button className="nav-link signout" onClick={() => {logout(); toggleNav()}}><MdExitToApp/>Sign out</button>
           </div>
         </div>
       )}
