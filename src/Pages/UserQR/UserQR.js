@@ -36,8 +36,8 @@ function UserQR() {
           // Generate QR code
           // Generate unique QR URL and id to store to server, only if qr image is not there
           if (!userQRimage) {
-            // QRCode.toDataURL(`${homeURL}/QR/user=${user.id}`, { width: 300 })
-            QRCode.toDataURL(`/QR/user=${user.id}`, { width: 300 })
+            QRCode.toDataURL(`${window.location.origin}/QR/user=${user.id}`, { width: 300 })
+            // QRCode.toDataURL(`/QR/user=${user.id}`, { width: 300 })
             .then(url => {
               // url returns a base64 string image, metadata image/png
               // store to user then render set to state, render

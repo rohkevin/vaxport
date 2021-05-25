@@ -15,8 +15,6 @@ function AppProvider({ children }) {
 
   const { currentUser } = useAuth();
 
-  const homeURL = "https://UNKNOWNLINKYET.com"
-
   useEffect(() => {
     db.collection("users").onSnapshot(snap => {
       const registeredUsers = snap.docs.map(doc => ({
@@ -55,7 +53,6 @@ function AppProvider({ children }) {
         reviewStatus, setReviewStatus,
         loginAlert, showAlert,
         currentPercentage, setCurrentPercentage,
-        homeURL,
         adminAccess
       }}
     >
