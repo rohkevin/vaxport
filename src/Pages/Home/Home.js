@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../Auth'
 import { useGlobalContext } from '../../context'
@@ -14,10 +14,36 @@ function Home() {
   const { user, setShowSignup, adminAccess } = useGlobalContext();
   const { currentUser, logout } = useAuth();
   const [sidenavOpen, setSidenavOpen] = useState(false);
+  const [routeTo, setRouteTo] = useState(null);
+
+  useEffect(() => {
+    if (user) {
+      if(user.adminAccess) {
+        setRouteTo("/certified")
+      }
+      // passport dne - route to uploadpassport
+      if (!user.passportNumber) {
+        setRouteTo("/upload-passport")
+      }
+      //records dne - route to records
+      if (!user.recordURL) {
+        setRouteTo("/upload-records")
+      }
+      // govverified dne - route to pending
+      if (!user.governmentVerified) {
+        setRouteTo("/pending-review")
+      }
+      // govverified exists - route to dashboard
+      if (user.governmentVerified) {
+        setRouteTo("/dashboard")
+      }
+    }
+  }, [user])
 
   const toggleNav = () => {
     setSidenavOpen(!sidenavOpen);
   }
+  
   return (
     <>
       {currentUser && user && (
@@ -56,10 +82,13 @@ function Home() {
             <img src={mainImg} alt="Intro to Vaxport"/>
           </figure>
           <h2>Say hello to Vaxport! Globally approved Covid-19 vaccine certification passport platform.</h2>
-          <p>We get rid of struggles proving your vaccination record. Make your business trip and vacation more accessible.</p>
-
-          <Link to="/login"><button className="home-btn" onClick={() => setShowSignup(true)}>GET STARTED</button></Link>
-          
+          <p>We get rid of struggles proving your vaccination record. Make your business trip and vacation more accessible.</p>  
+          {
+            currentUser && routeTo ? 
+              <Link to={routeTo}><button className="home-btn">CONTINUE TO PROFILE</button></Link>
+            :
+              <Link to="/login"><button className="home-btn" onClick={() => setShowSignup(true)}>GET STARTED</button></Link>
+          }
         </div>
       </main>
     </>
