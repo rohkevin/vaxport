@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router'
+import { useGlobalContext } from '../../context'
 import './PendingPage.scss'
 
 const verifiedIcon = process.env.PUBLIC_URL + '/assets/icons/uploaded.svg'
 
 function PendingPage() {
+  const { user, updateProgressCheck } = useGlobalContext();
   let history = useHistory();
 
+  useEffect(() => {
+    if (user) {
+      if ("recordURL" in user) {
+        updateProgressCheck("records");
+      }
+    }
+  }, [user])
   return (
     <main id="pending-page">
         <figure>

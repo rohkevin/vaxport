@@ -33,9 +33,10 @@ function AppProvider({ children }) {
   }, [])
   useEffect(() => {
     if (currentUser) {
-      db.collection("users").doc(currentUser.email).get().then(doc => {
+      const unsubscribe = db.collection("users").doc(currentUser.email).onSnapshot((doc) => {
         setUser(doc.data());
-      })
+      });
+      return () => unsubscribe();
     }
   }, [currentUser])
 
@@ -50,9 +51,6 @@ function AppProvider({ children }) {
       }
       if ("nationality" in user && "passportNumber" in user) {
         updateProgressCheck("passport");
-      }
-      if ("recordURL" in user) {
-        updateProgressCheck("records")
       }
     }
   }, [user])

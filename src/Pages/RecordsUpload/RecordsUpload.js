@@ -90,7 +90,7 @@ function RecordsUpload() {
               db.collection("users").doc(currentUser.email).set({
                 recordURL: url
               }, { merge: true });
-  
+              
               setImage(null);
               setImageUploaded(true);
               setIsModalOpen(false);

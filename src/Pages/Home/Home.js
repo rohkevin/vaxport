@@ -19,23 +19,28 @@ function Home() {
   useEffect(() => {
     if (user) {
       if(user.adminAccess) {
-        setRouteTo("/certified")
+        setRouteTo("/certified");
+        return;
       }
       // passport dne - route to uploadpassport
       if (!user.passportNumber) {
-        setRouteTo("/upload-passport")
+        setRouteTo("/upload-passport");
+        return;
       }
       //records dne - route to records
       if (!user.recordURL) {
-        setRouteTo("/upload-records")
+        setRouteTo("/upload-records");
+        return;
       }
       // govverified dne - route to pending
       if (!user.governmentVerified) {
-        setRouteTo("/pending-review")
+        setRouteTo("/pending-review");
+        return;
       }
       // govverified exists - route to dashboard
       if (user.governmentVerified) {
-        setRouteTo("/dashboard")
+        setRouteTo("/dashboard");
+        return;
       }
     }
   }, [user])
