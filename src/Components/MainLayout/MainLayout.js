@@ -6,12 +6,11 @@ import { useGlobalContext } from '../../context'
 import { useLocation } from 'react-router';
 
 function MainLayout({ children }) {
-  const { progress, setProgress } = useGlobalContext();
+  const { setProgress } = useGlobalContext();
 
   const { pathname } = useLocation();
   
   useEffect(() => {
-    console.log(pathname);
     if (pathname) {
       if (pathname === "/login") {
         setProgress(0);

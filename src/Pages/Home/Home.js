@@ -11,7 +11,7 @@ import './Home.scss'
 const mainImg = process.env.PUBLIC_URL + '/assets/icons/main.svg'
 
 function Home() {
-  const { user, setShowSignup, adminAccess } = useGlobalContext();
+  const { user, setUser, setShowSignup, adminAccess, setProgressCheck } = useGlobalContext();
   const { currentUser, logout } = useAuth();
   const [sidenavOpen, setSidenavOpen] = useState(false);
   const [routeTo, setRouteTo] = useState(null);
@@ -48,9 +48,20 @@ function Home() {
   const toggleNav = () => {
     setSidenavOpen(!sidenavOpen);
   }
+  const handleLogout = () => {
+    logout(); 
+    toggleNav();
+    setUser(null);
+    setProgressCheck([
+      { checkpointName: "account", status: false },
+      { checkpointName: "passport", status: false },
+      { checkpointName: "records", status: false }
+    ])
+  }
   
   return (
     <>
+      {/* Turn into sidenav component */}
       {currentUser && user && (
         <div className={sidenavOpen ? "show-sidenav sidenav" : "sidenav"}>
           <div className="sidenav-header">
@@ -66,7 +77,7 @@ function Home() {
           <div className="sidenav-links">
             <Link to={adminAccess ? "/certified" : "/dashboard"} className="nav-link"><GoVerified /><p>Dashboard</p></Link>
             <Link to="/settings" className="nav-link"><FiSettings /><p>Settings</p></Link>
-            <button className="nav-link signout" onClick={() => {logout(); toggleNav()}}><MdExitToApp/>Sign out</button>
+            <p className="nav-link signout" onClick={handleLogout}><MdExitToApp/>Sign out</p>
           </div>
         </div>
       )}

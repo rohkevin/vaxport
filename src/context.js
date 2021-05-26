@@ -70,22 +70,12 @@ function AppProvider({ children }) {
     })
     setProgressCheck(updated);
 
-    // if (progressCheck){
-    //   let updated = progressCheck.map((checkpoint) => {
-    //     if (checkpoint.checkpointName === checkpointName) {
-    //       return {...checkpoint, status: true};
-    //     }
-    //     return checkpoint
-    //   })
-    //   setProgressCheck(updated);
-
-    // }
   }
 
   return (
     <AppContext.Provider
       value={{
-        user,
+        user, setUser,
         users, setUsers,
         showSignup, setShowSignup,
         reviewStatus, setReviewStatus,

@@ -13,7 +13,7 @@ const securePic = process.env.PUBLIC_URL + '/assets/icons/secure.jpg';
 function AdminLogin() {
   const { currentUser } = useAuth();
   const [user, setUser] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [scannerModal, setScannerModal] = useState(false);
 
   useEffect(() => {

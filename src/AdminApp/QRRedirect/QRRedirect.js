@@ -28,6 +28,7 @@ function QRRedirect() {
       <main id="client-data-page">
           <div className="header">
             <Link to="/"><h1 className="logo">Vaxport</h1></Link>
+            <Link to="/certified"><p>Back to Dashboard</p></Link>
           </div>
           <div className="page-wrapper">
             <h2>Vaccination Passport</h2>

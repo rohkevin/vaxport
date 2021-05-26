@@ -22,6 +22,7 @@ function Login() {
 
   useEffect(()=> {
     // Clear fields
+    showAlert(false, '', '');
     if (emailRef.current.value) {
       emailRef.current.value="";
     }
@@ -44,8 +45,8 @@ function Login() {
   useEffect(() => {
     if (user) {
       db.collection("users").doc(user.email).set(user)
-      .then(function(docRef) {
-      })
+      // .then(function(docRef) {
+      // })
       .catch(function(error){
         alert('Error: user could not be added')
       })
@@ -78,6 +79,7 @@ function Login() {
         setUser(newUser);
 
         showAlert(true,'success','Redirecting...');
+        
         history.push("/upload-passport");
       } catch(error){
         switch (error.code){
@@ -105,6 +107,10 @@ function Login() {
         // Check login data against database
         if (users){
           const oldUser = users.find((user) => user.email === emailRef.current.value);
+          console.log(oldUser);
+          if ("adminAccess" in oldUser) {
+            nextPath="/certified"
+          } else 
           if (!("nationality" in oldUser) || !("passportNumber" in oldUser)) {
             nextPath = "/upload-passport";
           } else 
