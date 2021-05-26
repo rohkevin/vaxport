@@ -67,7 +67,7 @@ function Home() {
       )}
       
 
-      <main id="home-page" className={sidenavOpen ? "slide-left" : "normal-position"}>
+      <main id="home-page" className={sidenavOpen ? "slide-left" : "normal-position"} >
         <div className="header">
           <h1 className="logo">Vaxport</h1>
           {
