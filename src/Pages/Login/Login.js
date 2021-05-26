@@ -78,9 +78,6 @@ function Login() {
         setUser(newUser);
 
         showAlert(true,'success','Redirecting...');
-
-        
-
         history.push("/upload-passport");
       } catch(error){
         switch (error.code){
