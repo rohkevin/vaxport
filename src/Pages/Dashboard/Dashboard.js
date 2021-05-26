@@ -6,11 +6,13 @@ import './Dashboard.scss'
 import { FiSettings } from 'react-icons/fi'
 import LatestNews from '../../Components/LatestNews/LatestNews';
 import { Link } from 'react-router-dom';
+import MyDocuments from '../../Components/MyDocuments/MyDocuments';
 const peoplePic = process.env.PUBLIC_URL + '/assets/icons/people.jpg';
 
 function Dashboard() {
   const { currentUser } = useAuth();
   const [user, setUser] = useState(null);
+  const [showDocs, setShowDocs] = useState(false);
   let history = useHistory();
 
   // Get user info on dashboard
@@ -18,7 +20,7 @@ function Dashboard() {
     if (currentUser) {
       db.collection("users").doc(currentUser.email).get().then((doc) => {
         const userData = doc.data();
-        const { firstName, lastName, email, passportNumber } = userData;
+        const { firstName, lastName, email, passportNumber, recordURL } = userData;
         var governmentVerified = null;
 
         if ("governmentVerified" in userData) {
@@ -28,7 +30,8 @@ function Dashboard() {
           name: firstName.charAt(0).toUpperCase() + firstName.slice(1) + ' ' + lastName.charAt(0).toUpperCase() + lastName.slice(1),
           email: email,
           passport: passportNumber,
-          governmentVerified: governmentVerified
+          governmentVerified: governmentVerified,
+          recordURL: recordURL
         })
       })
     }
@@ -43,12 +46,16 @@ function Dashboard() {
     }
   }
 
+  const closeDocs = () => {
+    setShowDocs(false);
+  }
+
   if (user) {
     return (
       <main id="dashboard">
         <div className="header">
           <Link to="/"><h1 className="logo">Vaxport</h1></Link>
-          <Link to="/" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link>
+          <Link to="/settings" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link>
         </div>
 
         <figure>
@@ -60,10 +67,11 @@ function Dashboard() {
           <button 
             type="button" 
             className="button"
-            onClick={() => alert('Coming soon!')}
+            onClick={() => setShowDocs(true)}
             >
             View My Documents
           </button>
+          <MyDocuments showDocs={showDocs} closeDocs={closeDocs} user={user}/>
           <button 
             type="button" 
             onClick={handleQrRequest} 
