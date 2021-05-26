@@ -3,11 +3,13 @@ import { useHistory } from 'react-router'
 import './PassportUpload.scss'
 import { db } from '../../firebase';
 import { useAuth } from '../../Auth';
+import { useGlobalContext } from '../../context';
 
 import CountriesDropdown from '../../Components/CountriesDropdown/CountriesDropdown'
 
 function PassportUpload() {
   const { currentUser } = useAuth();
+  const { updateProgressCheck } = useGlobalContext();
   const [country, setCountry] = useState(null);
 
   let history = useHistory();
@@ -32,6 +34,12 @@ function PassportUpload() {
           nationality: country,
           passportNumber: passportRef.current.value
         }, { merge: true })
+
+        // Update progress bar
+        updateProgressCheck('passport');
+
+
+
         history.push("/upload-records");
       };
 

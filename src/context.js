@@ -12,6 +12,12 @@ function AppProvider({ children }) {
   const [users, setUsers] = useState(null);
   const [user, setUser] = useState(null);
   const [adminAccess, setAdminAccess] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [progressCheck, setProgressCheck] = useState([
+    { checkpointName: "account", status: false },
+    { checkpointName: "passport", status: false },
+    { checkpointName: "records", status: false }
+  ])
 
   const { currentUser } = useAuth();
 
@@ -32,16 +38,50 @@ function AppProvider({ children }) {
       })
     }
   }, [currentUser])
+
   useEffect(() => {
     if (user) {
       if ("adminAccess" in user) {
         setAdminAccess(true);
       }
+      // Progress bar checks for when a user relogs in to complete their profile
+      if ("firstName" in user && "lastName" in user && "email" in user && "password" in user) {
+        updateProgressCheck("account");
+      }
+      if ("nationality" in user && "passportNumber" in user) {
+        updateProgressCheck("passport");
+      }
+      if ("recordURL" in user) {
+        updateProgressCheck("records")
+      }
     }
-  },[user])
+  }, [user])
 
   const showAlert = (show = false, type = '', msg = '') => {
     setLoginAlert({show, type, msg});
+  }
+
+  const updateProgressCheck = (checkpointName) => {
+
+    const checkIndex = progressCheck.findIndex((checkpoint) => checkpoint.checkpointName === checkpointName);
+    let updated = progressCheck.map((checkpoint, index) => {
+      if (index <= checkIndex) {
+        return {...checkpoint, status: true};
+      }
+      return checkpoint;
+    })
+    setProgressCheck(updated);
+
+    // if (progressCheck){
+    //   let updated = progressCheck.map((checkpoint) => {
+    //     if (checkpoint.checkpointName === checkpointName) {
+    //       return {...checkpoint, status: true};
+    //     }
+    //     return checkpoint
+    //   })
+    //   setProgressCheck(updated);
+
+    // }
   }
 
   return (
@@ -53,7 +93,9 @@ function AppProvider({ children }) {
         reviewStatus, setReviewStatus,
         loginAlert, showAlert,
         currentPercentage, setCurrentPercentage,
-        adminAccess
+        adminAccess,
+        progress, setProgress,
+        progressCheck, setProgressCheck, updateProgressCheck
       }}
     >
       { children }

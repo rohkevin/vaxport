@@ -1,10 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+.progress-container{
+  border: 1px solid;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0 30px;
+  margin: 50px 0;
+}
+
+.checkpoints {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+} 
+.checkpoint {
+  text-align: center;
+}
+
 
 .progress {
 	background-color: #d8d8d8;
 	position: relative;
-  margin-top: 50px;
-  margin-bottom: 50px;
 	height: 8px;
 	width: 315px;
 }
