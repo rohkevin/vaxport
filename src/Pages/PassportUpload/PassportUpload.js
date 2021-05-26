@@ -24,6 +24,7 @@ function PassportUpload() {
     e.preventDefault();
     // Add passport nationality and number to current user's database
     if (!country || passportRef.current.value === "") {
+      // Change this to error message
       alert('fill out required fields')
     } else {
       if (currentUser) {
