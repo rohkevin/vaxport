@@ -45,8 +45,12 @@ function Login() {
     if (user) {
       db.collection("users").doc(user.email).set(user)
       .then(function(docRef) {
-        alert('User added successfully')
         // Clear fields
+        fnameRef.current.value="";
+        lnameRef.current.value="";
+        emailRef.current.value="";
+        passwordRef.current.value="";
+        passwordConfirmRef.current.value="";
       })
       .catch(function(error){
         alert('Error: user could not be added')
@@ -61,6 +65,10 @@ function Login() {
       if (passwordRef.current.value !== passwordConfirmRef.current.value) {
         return showAlert(true, 'failure', 'Passwords do not match!');
       }
+      // Check if all fields exist
+      if (!fnameRef.current.value || !lnameRef.current.value || !emailRef.current.value || !passwordRef.current.value || !passwordConfirmRef.current.value ) {
+        return showAlert(true, 'failure', 'Missing fields')
+      }
   
       try {
         await signup(emailRef.current.value, passwordRef.current.value);
@@ -73,7 +81,6 @@ function Login() {
           lastName: lnameRef.current.value,
           password: passwordRef.current.value,
         }
-        // console.log(newUser);
         setUser(newUser);
 
         showAlert(true,'success','Redirecting...');
@@ -108,19 +115,15 @@ function Login() {
         if (users){
           const oldUser = users.find((user) => user.email === emailRef.current.value);
           if (!("nationality" in oldUser) || !("passportNumber" in oldUser)) {
-            // console.log("registration incomplete");
             nextPath = "/upload-passport";
           } else 
           if (!("recordURL" in oldUser)) {
-            // console.log("missing records");
             nextPath = "/upload-records";
           } else
           // If not verified by the government yet
           if (!("governmentVerified" in oldUser)) {
             nextPath = "/pending-review"
-            // console.log("pending review")
           } else {
-            // console.log("everything's there")
             nextPath = "/dashboard";
           }
         }
