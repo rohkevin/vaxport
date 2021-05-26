@@ -28,6 +28,7 @@ const ScrollToTop = () => {
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Switch>
         <Route exact path="/" component={Home}/>
         {/* Needs to be privateroute from here*/}
