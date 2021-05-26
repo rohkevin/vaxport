@@ -38,11 +38,8 @@ function Dashboard() {
   const handleQrRequest = () => {
     if (user.governmentVerified === null) {
       history.push("/pending-review");
-    } else if (user.governmentVerified === false) {
+    } else {
       history.push("/QRCode")
-    } else if (user.governmentVerified === true) {
-      // Generate code 
-      history.push("/QRCode");
     }
   }
 
@@ -81,7 +78,6 @@ function Dashboard() {
   } else {
     return (
       <main id="dashboard">
-
         <h2>Loading...</h2>
       </main>
     )
