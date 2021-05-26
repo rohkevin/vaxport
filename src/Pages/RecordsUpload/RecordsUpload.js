@@ -39,9 +39,9 @@ function RecordsUpload() {
 
   }, [image])
 
+  // Upload via file
   const uploadImage = (e) => {
     if (e.target.files[0]) {
-      // Image selected
       setImage(e.target.files[0]);
     }
   }
@@ -98,9 +98,6 @@ function RecordsUpload() {
           }
         )
       })
-
-
-
     }
   }
   const openCamera = () => {
@@ -109,6 +106,8 @@ function RecordsUpload() {
   const toggleCameraModal = () => {
     setCameraModal(!cameraModal);
   }
+  
+  // Continue if record exists
   const handleContinue = () => {
     db.collection("users").doc(currentUser.email).get().then((doc) => {
       // Route to next path if record exists
@@ -116,6 +115,7 @@ function RecordsUpload() {
       if (recordURL) {
         history.push("/pending-review")
       } else {
+        // Change this to display message component instead of alert
         alert('Your upload could not be completed. Please try again or check back later.')
       }
     })
@@ -169,8 +169,6 @@ function RecordsUpload() {
 
           </div>
 
-          {/* temp button */}
-          {/* Validate that user info is there */}
           <button type="button" onClick={handleContinue} className="upload-btn">Continue</button>
         </form>
 
