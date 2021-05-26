@@ -24,8 +24,12 @@ const ProgressBar = () => {
             const { checkpointName, status } = checkpoint
             return (
               <div key={checkpointName} className="checkpoint">
-                <p>{checkpointName}</p>
-                <p>{status.toString()}</p>
+                <p className="checkpoint-label">{checkpointName}</p>
+                <div className="checkpoint-value" style={status ? {backgroundColor: 'var(--primary-main)'} : {backgroundColor: '#fff'}}>
+                  {
+                    status && <FiCheck />
+                  }
+                </div>
               </div>
             )
           })

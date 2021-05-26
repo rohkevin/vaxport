@@ -1,10 +1,10 @@
 .progress-container{
-  border: 1px solid;
   width: 100%;
   display: grid;
   place-items: center;
   padding: 0 30px;
-  margin: 50px 0;
+  margin: 50px 0 20px;
+  position: relative;
 }
 
 .checkpoints {
@@ -13,17 +13,44 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  z-index: 500;
 } 
 .checkpoint {
   text-align: center;
+  display: grid;
+  place-items: center;
+
+  .checkpoint-label {
+    text-transform: uppercase;
+    color: var(--primary-main);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .checkpoint-value {
+    content: "";
+    border: 2px solid var(--primary-main);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    svg {
+      color: #fff;
+      font-size: 20px;
+    }
+
+  }
 }
 
 
 .progress {
 	background-color: #d8d8d8;
-	position: relative;
+	position: absolute;
+  top: 50%;
 	height: 8px;
-	width: 315px;
+  width: 100%;
+  max-width: 285px;
 }
 
 .progress-done {
