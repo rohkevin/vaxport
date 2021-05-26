@@ -45,12 +45,6 @@ function Login() {
     if (user) {
       db.collection("users").doc(user.email).set(user)
       .then(function(docRef) {
-        // Clear fields
-        fnameRef.current.value="";
-        lnameRef.current.value="";
-        emailRef.current.value="";
-        passwordRef.current.value="";
-        passwordConfirmRef.current.value="";
       })
       .catch(function(error){
         alert('Error: user could not be added')
