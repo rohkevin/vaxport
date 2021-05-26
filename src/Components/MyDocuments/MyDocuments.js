@@ -28,7 +28,7 @@ function MyDocuments({ showDocs, closeDocs, user }) {
           <button 
             onClick={() => window.open(user.recordURL, '_blank')} 
             className="doc-image-link"
-            >View uploaded Image
+            >View Uploaded Image
           </button>
         </span>
         
