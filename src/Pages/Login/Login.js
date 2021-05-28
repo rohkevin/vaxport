@@ -73,7 +73,6 @@ function Login() {
           email: emailRef.current.value,
           firstName: fnameRef.current.value,
           lastName: lnameRef.current.value,
-          password: passwordRef.current.value,
         }
         setUser(newUser);
 

@@ -46,7 +46,7 @@ function AppProvider({ children }) {
         setAdminAccess(true);
       }
       // Progress bar checks for when a user relogs in to complete their profile
-      if ("firstName" in user && "lastName" in user && "email" in user && "password" in user) {
+      if ("firstName" in user && "lastName" in user && "email" in user) {
         updateProgressCheck("account");
       }
       if ("nationality" in user && "passportNumber" in user) {
