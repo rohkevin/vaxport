@@ -13,17 +13,16 @@ const ProgressBar = () => {
       opacity: 1
     }
     setStyle(newStyle);
-
   }, [progress])
 	
 	return (
     <div className="progress-container">
       <div className="checkpoints">
         {
-          progressCheck.map((checkpoint) => {
-            const { checkpointName, status } = checkpoint
+          progressCheck.map((checkpoint, index) => {
+            const { checkpointName, status } = checkpoint;
             return (
-              <div key={checkpointName} className="checkpoint">
+              <div key={checkpointName} className="checkpoint" id={`checkpoint${index}`}>
                 <p className="checkpoint-label">{checkpointName}</p>
                 <div className="checkpoint-value" style={status ? {backgroundColor: 'var(--primary-main)'} : {backgroundColor: '#fff'}}>
                   {

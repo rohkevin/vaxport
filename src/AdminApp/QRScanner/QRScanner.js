@@ -6,7 +6,7 @@ function QRScanner({closeScanner}) {
   let scanCounter = 0;
   const handleScan = (data) => {
     scanCounter++;
-    if (scanCounter > 1000) {
+    if (scanCounter > 2000) {
       closeScanner();
       alert('No code found');
       scanCounter = 0;

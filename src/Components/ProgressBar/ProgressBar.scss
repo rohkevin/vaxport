@@ -49,8 +49,9 @@
 	position: absolute;
   top: 50%;
 	height: 8px;
-  width: 100%;
-  max-width: 285px;
+  // Temp width: 100% of container minus padding of 30px each side, minus estimate of space from end to checkpoint
+  width: calc(100% - 60px - 60px);
+
 }
 
 .progress-done {

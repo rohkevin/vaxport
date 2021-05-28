@@ -6,7 +6,7 @@ import { useGlobalContext } from '../../context'
 import { useLocation } from 'react-router';
 
 function MainLayout({ children }) {
-  const { setProgress } = useGlobalContext();
+  const { showSignup, setProgress } = useGlobalContext();
 
   const { pathname } = useLocation();
   
@@ -29,7 +29,7 @@ function MainLayout({ children }) {
 
   return (
     <div className={pathname === '/dashboard' ? 'display-none' : 'full-mid'}>
-      <ProgressBar />
+      {!showSignup && pathname ==="/login" ? null : <ProgressBar/>}
       <div className="children">{ children }</div>
     </div>
   )

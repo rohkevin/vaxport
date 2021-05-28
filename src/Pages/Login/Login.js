@@ -2,10 +2,11 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useGlobalContext } from '../../context';
 import { useAuth } from '../../Auth'
-import './Login.scss'
-import { generateUID } from '../../Utils/generateUID'
-import LoginMessage from '../../Components/LoginMessage/LoginMessage';
 import { db } from '../../firebase';
+import './Login.scss';
+import { generateUID } from '../../Utils/generateUID';
+
+import LoginMessage from '../../Components/LoginMessage/LoginMessage';
 
 function Login() {
   const { showSignup, setShowSignup, showAlert, loginAlert, users } = useGlobalContext();
@@ -45,8 +46,6 @@ function Login() {
   useEffect(() => {
     if (user) {
       db.collection("users").doc(user.email).set(user)
-      // .then(function(docRef) {
-      // })
       .catch(function(error){
         alert('Error: user could not be added')
       })
@@ -182,7 +181,7 @@ function Login() {
             </>
           )}
           <button type="submit" onClick={handleSubmit}>
-            {showSignup ? 'Continue' : 'Login'}
+            {showSignup ? 'Continue' : 'Sign In'}
           </button>
           {showSignup ? 
           <span className="switch-to-login" onClick={() => setShowSignup(false)}>Log in instead</span>
