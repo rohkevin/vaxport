@@ -1,13 +1,13 @@
 # Vaxport
 
-### A vaccine passport for travelers in COVID times.
-Vaxport is a digital passport in the form of a mobile web app.
+### A vaccine passport for travelers in COVID times 
+:airplane: Vaxport is a digital passport in the form of a mobile web app.
 
-With vaccines on the roll-out internationally, traveling is starting open up. The problem is that different countries require different documentations at different checkpoints. 
+:airplane: With vaccines on the roll-out internationally, traveling is starting open up. The problem is that different countries require different documentations at different checkpoints. 
 
-Vaxport aims to simplify this process into a digital passport that allows one application to act as an official proof of vaccination internationally.
+:airplane: Vaxport aims to simplify this process into a digital passport that allows one application to act as an official proof of vaccination internationally.
 
-This project was built for TOHacks Hackathon 2021.
+:airplane: This project was built for TOHacks Hackathon 2021.
 
 
 ## View Demos
