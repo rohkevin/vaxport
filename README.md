@@ -19,7 +19,7 @@ Please note that using a mobile device will give the best experience.
 
 
 ## Technologies
-- React
+- ReactJS
 - Firebase
   - Authentication
   - Firestore (User data)
