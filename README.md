@@ -18,6 +18,15 @@ Please note that using a mobile device will give the best experience.
 ### [Video Demo](https://kevinroh.ca/works/vaxport)
 
 
+## Technologies
+- React
+- Firebase
+  - Authentication
+  - Firestore (User data)
+  - Storage (Image storage)
+- SASS 
+
+
 ## How will it work?
 ### User
 The user will be prompted to upload their vaccination records via image once they have registered.
