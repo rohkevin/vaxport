@@ -47,3 +47,7 @@ Project is: _in progress_
 COVID has been here a while and I think we're all excited to escape it.
 Traveling has been one of my favorite past-times and I'm really excited that vaccinations are rolling out.
 It is even more important to be careful now so that we don't fall out of control again, and Vaxport allows us this extra layer of health security with easier access.
+
+## Contact
+
+Created by [@rohkevin](https://kevinroh.ca) - feel free to reach out to let me know your thoughts and feedback on this project!! A solid piece of advice goes a long way :pray:
