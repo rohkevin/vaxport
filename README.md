@@ -1,11 +1,11 @@
 # Vaxport
 
-### A vaccine passport for travelers in COVID times :airplane: :hospital:
+### A vaccine passport for travelers in COVID times :airplane: 
 Vaxport is a digital passport in the form of a mobile web app.
 
 With vaccines on the roll-out internationally, traveling is starting open up. The problem is that different countries require different documentations at different checkpoints. 
 
-Vaxport aims to simplify this process into a digital passport that allows one application to act as an official proof of vaccination internationally.
+Vaxport aims to simplify this process into a digital passport that allows one application to act as an official proof of vaccination internationally, along with removing the need to carry a physical card as proof of documentation.
 
 This project was built for TOHacks Hackathon 2021.
 
@@ -32,21 +32,25 @@ Vaxport is also set up for official users who can use this app or their QR scann
 
 ## Future Development
 
-- Government database access
-- Include rear-facing camera
+- Government health database access
 - Register multiple users per account so that families with children may register under one application
 - Utilize image-to-text recognition software to validate uploaded images faster
+- Include rear-facing camera
+- Extend usage beyond traveling (i.e. senior care homes)
+
+
+## Inspiration
+
+COVID has been here a while and I think we're all excited to see things come back to normal.
+Traveling has been one of my favorite past-times and I'm really excited that vaccinations are rolling out.
+Just because there are vaccines does not mean we should be flying to places carelessly. Being able to prove that you are vaccinated would provide a certain measure of reassurance to the destination countries and venues. 
+As things open back up, it is critical to be careful so that we don't fall out of control again. Vaxport allows us this extra layer of health security with easier access.
 
 
 ## Status
 
 Project is: _in progress_
 
-## Inspiration
-
-COVID has been here a while and I think we're all excited to escape it.
-Traveling has been one of my favorite past-times and I'm really excited that vaccinations are rolling out.
-It is even more important to be careful now so that we don't fall out of control again, and Vaxport allows us this extra layer of health security with easier access.
 
 ## Contact
 
