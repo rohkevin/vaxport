@@ -1,6 +1,6 @@
 #upload-records {
-  width: 100%;
-  max-width: 100vw;
+  width: 100vw;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -35,6 +35,7 @@
   bottom: 0;
   left: 0;
   width: 100vw;
+  max-width: 500px;
   height: 100vh;
   opacity: 1;
   background: #0000008c;
@@ -45,7 +46,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
@@ -53,7 +54,8 @@
 .upload-modal {
   position: fixed;
   bottom: -100%;
-  width: 100vw;
+  width: 100%;
+  max-width: 500px;
   height: 250px;
   padding: 30px;
   border-top-left-radius: 15px;

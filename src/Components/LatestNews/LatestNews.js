@@ -47,11 +47,9 @@ function LatestNews() {
             )
           })
       }
-
-      
-
-      {/* Get news */}
-
+      {
+        !news && <p>This feature is temporarily disabled due to requiring a paid-plan to access the NewsAPI in production mode.</p>
+      }
     </div>
   )
 }

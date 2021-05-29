@@ -15,6 +15,24 @@ function Home() {
   const { currentUser, logout } = useAuth();
   const [sidenavOpen, setSidenavOpen] = useState(false);
   const [routeTo, setRouteTo] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const checkSize = () => {
+    setWindowWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', checkSize);
+    return () => {
+      window.removeEventListener('reszize', checkSize)
+    }
+  })
+  useEffect(() => {
+    console.log(windowWidth);
+    if (windowWidth > 500) {
+      alert('We are working on the desktop version! For now please watch the demo video on kevinroh.ca/works/vaxport or use your mobile phone for the best experience.')
+    } 
+  }, [])
+
 
   useEffect(() => {
     if (user) {

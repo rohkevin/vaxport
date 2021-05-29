@@ -27,7 +27,7 @@ function WebcamComponent({image, setImage, toggleCameraModal, setCameraUpload}) 
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        width={window.innerWidth}
+        width={window.innerWidth > 500 ? 500 : window.innerWidth}
         videoConstraints={videoConstraints}
         mirrored={false}
       />
