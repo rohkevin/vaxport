@@ -133,60 +133,60 @@ function Login() {
   return (
     <main id="login-page">
       <form>
-          <div className={showAlert ? "login-alert show-alert" : "login-alert"}>
-            {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}
-          </div>
-          {showSignup && (
-            <>
-              <label htmlFor="fname">First Name</label>
-              <input
-                type="text"
-                name="fname"
-                ref={fnameRef}
-                placeholder="First name"
-              />
-              <label htmlFor="lname">Last Name</label>
-              <input
-                type="text"
-                name="lname"
-                ref={lnameRef}
-                placeholder="Last name"
-              />
-            </>
-          )}
-          <label htmlFor="login-email">Email</label>
-          <input
-            type="email"
-            name="login-email"
-            ref={emailRef}
-            placeholder="Email"
-          />
-          <label htmlFor="login-password">Password</label>
-          <input
-            type="password"
-            name="login-password"
-            ref={passwordRef}
-            placeholder="Password"
-          />
-          {showSignup && (
-            <>
-              <label htmlFor="login-password-confirm">Confirm Password</label>
-              <input
-                type="password"
-                name="login-password-confirm"
-                ref={passwordConfirmRef}
-                placeholder="Confirm Password"
-              />
-            </>
-          )}
-          <button type="submit" onClick={handleSubmit}>
-            {showSignup ? 'Continue' : 'Sign In'}
-          </button>
-          {showSignup ? 
-          <span className="switch-to-login" onClick={() => setShowSignup(false)}>Log in instead</span>
-          :
-          <span className="switch-to-login" onClick={() => setShowSignup(true)}>Need an account? Sign up</span>}
-          <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw'}>Forgot your password?</Link>
+        <div className={showAlert ? "login-alert show-alert" : "login-alert"}>
+          {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}
+        </div>
+        {showSignup && (
+          <>
+            <label htmlFor="fname">First Name</label>
+            <input
+              type="text"
+              name="fname"
+              ref={fnameRef}
+              placeholder="First name"
+            />
+            <label htmlFor="lname">Last Name</label>
+            <input
+              type="text"
+              name="lname"
+              ref={lnameRef}
+              placeholder="Last name"
+            />
+          </>
+        )}
+        <label htmlFor="login-email">Email</label>
+        <input
+          type="email"
+          name="login-email"
+          ref={emailRef}
+          placeholder="Email"
+        />
+        <label htmlFor="login-password">Password</label>
+        <input
+          type="password"
+          name="login-password"
+          ref={passwordRef}
+          placeholder="Password"
+        />
+        {showSignup && (
+          <>
+            <label htmlFor="login-password-confirm">Confirm Password</label>
+            <input
+              type="password"
+              name="login-password-confirm"
+              ref={passwordConfirmRef}
+              placeholder="Confirm Password"
+            />
+          </>
+        )}
+        <button type="submit" onClick={handleSubmit}>
+          {showSignup ? 'Continue' : 'Sign In'}
+        </button>
+        {showSignup ? 
+        <span className="switch-to-login" onClick={() => setShowSignup(false)}>Log in instead</span>
+        :
+        <span className="switch-to-login" onClick={() => setShowSignup(true)}>Need an account? Sign up</span>}
+        <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw'}>Forgot your password?</Link>
       </form>
     </main>
   )

@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../Auth'
 import { useGlobalContext } from '../../context'
 
-import { FiMenu, FiArrowRight, FiSettings } from 'react-icons/fi'
-import { GoVerified } from 'react-icons/go'
-import { MdExitToApp } from 'react-icons/md'
+import { FiMenu, FiArrowRight } from 'react-icons/fi'
+
 import './Home.scss'
+import Sidenav from '../../Components/Sidenav/Sidenav'
 
 const mainImg = process.env.PUBLIC_URL + '/assets/icons/main.svg'
 
 function Home() {
-  const { user, setUser, setShowSignup, adminAccess, setProgressCheck } = useGlobalContext();
+  const { user, setUser, setShowSignup, setProgressCheck } = useGlobalContext();
   const { currentUser, logout } = useAuth();
   const [sidenavOpen, setSidenavOpen] = useState(false);
   const [routeTo, setRouteTo] = useState(null);
@@ -26,13 +26,6 @@ function Home() {
       window.removeEventListener('reszize', checkSize)
     }
   })
-  useEffect(() => {
-    console.log(windowWidth);
-    if (windowWidth > 500) {
-      alert('We are working on the desktop version! For now please watch the demo video on kevinroh.ca/works/vaxport or use your mobile phone for the best experience.')
-    } 
-  }, [])
-
 
   useEffect(() => {
     if (user) {
@@ -76,32 +69,19 @@ function Home() {
       { checkpointName: "records", status: false }
     ])
   }
+  const handleOutsideClick = (e) => {
+    if (sidenavOpen && !e.target.classList.contains("show-sidenav")){
+      setSidenavOpen(false);
+    }
+  }
   
   return (
     <>
-      {/* Turn into sidenav component */}
-      {currentUser && user && (
-        <div className={sidenavOpen ? "show-sidenav sidenav" : "sidenav"}>
-          <div className="sidenav-header">
-            <h1>Vaxport</h1>
-          </div>
-          <div className="divider"/>
-          <div className="nav-user-info">
-            <p>Signed in as</p>
-            <p className="username">{user.firstName}</p>
+      <Sidenav sidenavOpen={sidenavOpen} handleLogout={handleLogout} />
 
-          </div>
-          
-          <div className="sidenav-links">
-            <Link to={adminAccess ? "/certified" : "/dashboard"} className="nav-link"><GoVerified /><p>Dashboard</p></Link>
-            <Link to="/settings" className="nav-link"><FiSettings /><p>Settings</p></Link>
-            <p className="nav-link signout" onClick={handleLogout}><MdExitToApp/>Sign out</p>
-          </div>
-        </div>
-      )}
       
-
-      <main id="home-page" className={sidenavOpen ? "slide-left" : "normal-position"} >
+      {/* Home */}
+      <main id="home-page" className={sidenavOpen ? "slide-left" : "normal-position"} onClick={handleOutsideClick}>
         <div className="header">
           <h1 className="logo">Vaxport</h1>
           {

@@ -6,7 +6,6 @@ import { IoRadioButtonOn } from 'react-icons/io5'
 
 function WebcamComponent({image, setImage, toggleCameraModal, setCameraUpload}) {
   const webcamRef = useRef(null);
-  // const [imgSrc, setImgSrc] = useState(null);
 
   const videoConstraints = {
     width: window.innerWidth,

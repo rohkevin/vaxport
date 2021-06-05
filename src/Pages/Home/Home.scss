@@ -5,6 +5,7 @@
   justify-content: flex-start;
   position: relative;
   min-height: 100vh;
+  max-width: 500px;
   overflow: scroll;
 }
 .header {
@@ -74,6 +75,7 @@
   }
 }
 .home-btn{
+  margin-top: 40px;
   margin-bottom: 100px;
 }
 
@@ -90,79 +92,11 @@
   left: 0;
   transition: 0.2s ease-in-out;
 }
-.sidenav {
-  height: 100vh;
-  max-height: 100vh;
-  width: 70vw;
-  max-width: 350px;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  padding: 20px;
-  margin: 0;
-  background-color: var(--primary-light);
-  z-index: 500;
-  transition: 0.2s ease-in-out;
-  border: 1px solid;
-  display: block;
-  overflow: scroll;
-}
-.show-sidenav {
-  top: 0;
-  right: 0;
-  margin: 0;
-  height: 100vh;
-  max-height: 100vh;
-  transition: 0.2s ease-in-out;
-}
-.sidenav-header {
-  position: relative;
-  display: grid;
-  place-items: center;
-  align-items: center;
-  color: #ffffff;
-  padding: 40px 20px;
 
-  h1 {
-    color: #ffffff;
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-}
-.nav-user-info {
-  color: #fff;
-  width: 100%;
-  text-align: center;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  p {
-    line-height: 1.8;
-  }
-  .username {
-    margin-left: 5px;
-    font-weight: 800;
-    text-transform: capitalize;
-  }
-}
-.sidenav-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 20px;
-}
-.nav-link {
-  color: #ffffff;
-  min-width: 0;
-  padding: 5px;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  svg {
-    margin-right: 20px;
-    color: #fff;
-  }
-  p {
-    color: #fff;
+@media only screen and (min-width: 500px) {
+  .slide-left{
+    left: 0;
+    top: 0;
+    transition: none;
   }
 }

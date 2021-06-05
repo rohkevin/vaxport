@@ -1,5 +1,24 @@
 #qrcode {
+  margin-bottom: 50px;
 
+  .back-dashboard{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    align-self: flex-start;
+
+    svg, p {
+      color: var(--light-gray);
+      font-size: 14px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .button-wrapper {
     width: 100%;
     display: flex;
@@ -40,6 +59,7 @@
 }
 .qr-image {
   width: 100%;
+  max-width: 300px;
   margin: 10px 0 20px;
   display: grid;
   place-items: center;

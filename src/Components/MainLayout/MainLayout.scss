@@ -7,9 +7,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   .children {
     display: flex;
     flex-grow: 1;
+  }
+}
+.back-home {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 30px;
+  align-self: flex-start;
+
+  svg, p {
+    color: var(--light-gray);
+    font-size: 14px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+#main-layout {
+  .max-width{
+    display: flex;
+    flex-direction: column;
   }
 }

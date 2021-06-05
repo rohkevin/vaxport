@@ -55,7 +55,7 @@ function Dashboard() {
       <main id="dashboard">
         <div className="header">
           <Link to="/"><h1 className="logo">Vaxport</h1></Link>
-          <Link to="/settings" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link>
+          {/* <Link to="/settings" className="link"><button type="button" className="icon-btn"><FiSettings/></button></Link> */}
         </div>
 
         <figure>

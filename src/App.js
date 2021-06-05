@@ -25,6 +25,7 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 }
+
 function App() {
   return (
     <Router>

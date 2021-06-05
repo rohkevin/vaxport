@@ -123,6 +123,9 @@ function RecordsUpload() {
 
   return (
     <main id="upload-records">
+      <div className="max-width">
+
+      
         <figure>
           <img src={vaccineRecord} alt="Vaccine receipt"/>
         </figure>
@@ -141,7 +144,7 @@ function RecordsUpload() {
             { imageUploaded ? 'Upload Completed!' : 'Upload' }
           </button>  
 
-
+          {/* Upload modal */}
           {/* Needs to be a component */}
           <div 
             className={isModalOpen ? "overlay" : "hide-overlay"} 
@@ -171,7 +174,7 @@ function RecordsUpload() {
 
           <button type="button" onClick={handleContinue} className="upload-btn">Continue</button>
         </form>
-
+      </div>
     </main>
   )
 }

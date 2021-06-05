@@ -104,11 +104,7 @@ function UserQR() {
   if (qr && govVerif === true && user) {
     return (
       <main id="qrcode">
-        <div  className="button-wrapper">
-          <Link to="/dashboard" className="link"><button type="button" className="icon-btn"><FiArrowLeft/></button></Link>
-  
-        </div>
-  
+        <Link to="/dashboard" className="back-dashboard"><FiArrowLeft /><p>Back to Dashboard</p></Link>
         <div className="page-wrapper">
           <h2>Vaccination Passport</h2>
           <p>This QR code is valid in over 50 countries globally as your proof of vaccination.</p>

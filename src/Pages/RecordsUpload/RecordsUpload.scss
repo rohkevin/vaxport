@@ -1,9 +1,17 @@
 #upload-records {
   width: 100vw;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  
+  .max-width {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
   .text-wrapper{
     max-width: 100%;
@@ -22,16 +30,21 @@
     margin-bottom: 40px;
   }
   figure {
+    margin: 30px 0;
     max-width: 100%;
     img {
       max-width: 100%;
     }
   }
+  .upload-btn {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 .overlay {
   display: block;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -43,7 +56,7 @@
 }
 .hide-overlay{
   visibility: hidden;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -52,21 +65,23 @@
 }
 
 .upload-modal {
-  position: fixed;
+  position: absolute;
   bottom: -100%;
   width: 100%;
   max-width: 500px;
-  height: 250px;
+  height: 100%;
+  max-height: 300px;
   padding: 30px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: var(--background-default);
   transform-origin: bottom center;
-  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  // transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   opacity: 0;
   visibility: none;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
   button {
     width: 100%;
@@ -83,7 +98,7 @@
 }
 .show-modal {
   transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  height: 260px;
+  // height: 260px;
   position: fixed;
   bottom: 0;
   opacity: 1;
@@ -117,7 +132,4 @@ input[type="file"] {
     height: 24px;
     margin-right: 10px;
   }
-}
-.upload-btn {
-  width: 100%;
 }
