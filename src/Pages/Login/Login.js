@@ -105,7 +105,6 @@ function Login() {
         // Check login data against database
         if (users){
           const oldUser = users.find((user) => user.email === emailRef.current.value);
-          console.log(oldUser);
           if ("adminAccess" in oldUser) {
             nextPath="/certified"
           } else 
@@ -183,10 +182,10 @@ function Login() {
           {showSignup ? 'Continue' : 'Sign In'}
         </button>
         {showSignup ? 
-        <span className="switch-to-login" onClick={() => setShowSignup(false)}>Log in instead</span>
+        <button type="button" className="switch-to-login button-2" onClick={() => setShowSignup(false)}>Log in instead</button>
         :
-        <span className="switch-to-login" onClick={() => setShowSignup(true)}>Need an account? Sign up</span>}
-        <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw'}>Forgot your password?</Link>
+        <button type="button" className="switch-to-login button-2" onClick={() => setShowSignup(true)}>Need an account? Sign up</button>}
+        <Link to="/" className={showSignup ? 'display-none' : 'forgot-pw button-2'}>Forgot your password?</Link>
       </form>
     </main>
   )

@@ -83,7 +83,7 @@ function Home() {
       {/* Home */}
       <main id="home-page" className={sidenavOpen ? "slide-left" : "normal-position"} onClick={handleOutsideClick}>
         <div className="header">
-          <h1 className="logo">Vaxport</h1>
+          <Link to="/"><h1 className="logo">Vaxport</h1></Link>
           {
             currentUser ?
             <button className="menu-btn" onClick={toggleNav}>{sidenavOpen ? <FiArrowRight/> : <FiMenu />}</button>

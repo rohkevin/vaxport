@@ -26,7 +26,7 @@ function Sidenav({ sidenavOpen, handleLogout }) {
         <div className="sidenav-links">
           <Link to={adminAccess ? "/certified" : "/dashboard"} className="nav-link"><GoVerified /><p>Dashboard</p></Link>
           <Link to="/settings" className="nav-link"><FiSettings /><p>Settings</p></Link>
-          <p className="nav-link signout" onClick={handleLogout}><MdExitToApp/>Sign out</p>
+          <span className="nav-link signout" onClick={handleLogout}><MdExitToApp/>Sign out</span>
         </div>
       </div>
     )
